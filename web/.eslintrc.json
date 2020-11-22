@@ -28,6 +28,13 @@
             {"extensions": [".js", ".jsx"]}
         ],
         "import/prefer-default-export": "off",
-        "jsx-quotes": ["error", "prefer-single"]
+		  "jsx-quotes": ["error", "prefer-single"],
+		  "jsx-a11y/label-has-associated-control": [ 2, {
+			"labelComponents": ["label"],
+			"labelAttributes": ["htmlFor"],
+			"controlComponents": ["input"]
+		 }],
+		 "jsx-a11y/anchor-is-valid": [0],
+		 "react/prop-types": [0]
     }
 }

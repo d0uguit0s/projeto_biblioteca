@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import Login from './pages/Login/index';
 
 function App() {
-	return <h1>Teste</h1>
+	return <Login />;
 }
 
-export default App
+export default App;

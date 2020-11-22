@@ -1,0 +1,22 @@
+.areaBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.customBtn{
+	border-radius: 10px;
+}
+
+.links{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 15px;
+}
+
+.links a{
+	margin: 0;
+}
