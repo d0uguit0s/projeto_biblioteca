@@ -1,8 +1,12 @@
 import React from 'react';
-import Login from './pages/Login/index';
+// import Loading from './components/Loading';
+// import NavBar from './components/NavBar';
+// import Login from './pages/Login/index';
+import Routes from './Routes';
 
 function App() {
-	return <Login />;
+	return <Routes />;
+	// return <Loading />;
 }
 
 export default App;

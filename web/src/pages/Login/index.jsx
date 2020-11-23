@@ -1,17 +1,37 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import ContainerForm from '../../components/ContainerForm/index';
 import './style.css';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [fieldEmail, setFieldEmail] = useState('');
+	const [fieldPassword, setFieldPassword] = useState('');
+	const history = useHistory();
+	let login;
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		// if (email === '' || password === '') {
-		// 	alert('Preencha os campos');
-		// }
+		axios.get('http://localhost:3333/users').then(response => {
+			const results = response.data;
+			if (fieldEmail === '' || fieldPassword === '') {
+				alert('Preencha os campos por favor!');
+			} else {
+				login = results.some(({ email, password }) => {
+					return email === fieldEmail && password === fieldPassword;
+				});
+			}
+
+			if (login) {
+				history.push('/loading');
+				setTimeout(() => {
+					history.push('/home');
+				}, 3000);
+			} else {
+				alert('Dados incorretos');
+			}
+		});
 	}
 
 	return (
@@ -24,8 +44,8 @@ function Login() {
 							id='email'
 							type='email'
 							className='validate'
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							value={fieldEmail}
+							onChange={e => setFieldEmail(e.target.value)}
 						/>
 						<label htmlFor='email'>Email</label>
 					</div>
@@ -37,8 +57,8 @@ function Login() {
 							id='password'
 							type='password'
 							className='validate'
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
+							value={fieldPassword}
+							onChange={e => setFieldPassword(e.target.value)}
 						/>
 						<label htmlFor='password'>Password</label>
 					</div>

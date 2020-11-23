@@ -1,22 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 	return (
 		<nav>
 			<div className='nav-wrapper'>
-				{/* <a href='#' className='brand-logo'>
+				<a href='#' className='brand-logo'>
 					Logo
-				</a> */}
+				</a>
 				<ul id='nav-mobile' className='right hide-on-med-and-down'>
 					<li>
-						<a href='sass.html'>Sass</a>
+						<Link to='/user'>Usuário</Link>
 					</li>
 					<li>
-						<a href='badges.html'>Components</a>
+						<Link to='/'>
+							<i className='material-icons left'>login</i>
+							Sair
+						</Link>
+					</li>
+					{/* <li>
+						<Link to='badges.html'>Components</Link>
 					</li>
 					<li>
-						<a href='collapsible.html'>JavaScript</a>
-					</li>
+						<Link to='collapsible.html'>JavaScript</Link>
+					</li> */}
 				</ul>
 			</div>
 		</nav>
