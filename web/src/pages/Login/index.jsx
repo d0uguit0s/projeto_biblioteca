@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import ContainerForm from '../../components/ContainerForm/index';
 import './style.css';
-import { useHistory } from 'react-router-dom';
 
 function Login() {
 	const [fieldEmail, setFieldEmail] = useState('');
@@ -37,30 +37,32 @@ function Login() {
 	return (
 		<ContainerForm>
 			<form className='col s12'>
-				<div className='row'>
-					<div className='input-field col s12'>
-						<i className='material-icons prefix'>account_circle</i>
-						<input
-							id='email'
-							type='email'
-							className='validate'
-							value={fieldEmail}
-							onChange={e => setFieldEmail(e.target.value)}
-						/>
-						<label htmlFor='email'>Email</label>
+				<div className='inputArea'>
+					<div className='row'>
+						<div className='input-field col s12'>
+							<i className='material-icons prefix'>account_circle</i>
+							<input
+								id='email'
+								type='email'
+								className='validate'
+								value={fieldEmail}
+								onChange={e => setFieldEmail(e.target.value)}
+							/>
+							<label htmlFor='email'>Email</label>
+						</div>
 					</div>
-				</div>
-				<div className='row'>
-					<div className='input-field col s12'>
-						<i className='material-icons prefix'>vpn_key</i>
-						<input
-							id='password'
-							type='password'
-							className='validate'
-							value={fieldPassword}
-							onChange={e => setFieldPassword(e.target.value)}
-						/>
-						<label htmlFor='password'>Password</label>
+					<div className='row'>
+						<div className='input-field col s12'>
+							<i className='material-icons prefix'>vpn_key</i>
+							<input
+								id='password'
+								type='password'
+								className='validate'
+								value={fieldPassword}
+								onChange={e => setFieldPassword(e.target.value)}
+							/>
+							<label htmlFor='password'>Password</label>
+						</div>
 					</div>
 				</div>
 				<div className='areaBtn'>
@@ -75,8 +77,8 @@ function Login() {
 					</button>
 				</div>
 				<div className='links'>
-					<a href='#'>Esqueci minha senha</a>
-					<a href='#'>Cadastre-se</a>
+					<Link to='/forgetPsw'>Esqueci minha senha</Link>
+					<Link to='/register'>Cadastre-se</Link>
 				</div>
 			</form>
 		</ContainerForm>

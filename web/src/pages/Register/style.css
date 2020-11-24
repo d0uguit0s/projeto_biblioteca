@@ -1,0 +1,9 @@
+.areaBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.customBtn{
+	border-radius: 10px;
+}
