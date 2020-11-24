@@ -6,6 +6,27 @@
       "lastName": "Silva",
       "email": "douglas@mail.com",
       "password": "123456"
+    },
+    {
+      "name": "Andrey",
+      "lastName": "Senna",
+      "email": "andrey@mail.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "name": "Natan",
+      "lastName": "Silva",
+      "email": "natan@mail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "name": "Leticia",
+      "lastName": "Arlete",
+      "email": "leticia@mail.com",
+      "password": "leticia123",
+      "id": 4
     }
   ],
   "books": []

@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import ContainerForm from '../../components/ContainerForm';
 
 // import { Container } from './styles';
@@ -10,10 +12,19 @@ function Register() {
 	const [fieldPassword, setFieldPassword] = useState('');
 	const [fieldConfirmPassword, setFieldConfirmPassword] = useState('');
 
-	const [errorField, setErrorField] = useState(false);
+	const [errorField, setErrorField] = useState(true);
 	const [validationName, setValidationName] = useState('validate');
 	const [validationLastName, setValidationLastName] = useState('validate');
 	const [validationConfirmPsw, setValidationConfirmPsw] = useState('validate');
+
+	const history = useHistory();
+
+	const data = {
+		name: fieldName,
+		lastName: fieldLastName,
+		email: fieldEmail,
+		password: fieldPassword,
+	};
 
 	function validateName() {
 		if (fieldName === '') {
@@ -52,28 +63,17 @@ function Register() {
 		e.preventDefault();
 
 		if (!errorField) {
-			console.log('foi');
+			axios
+				.post('http://localhost:3333/users', data)
+				.then(() => {
+					alert('Usuário criado com sucesso!');
+					history.push('/loading');
+					setTimeout(() => {
+						history.push('/home');
+					}, 3000);
+				})
+				.catch(error => alert(error));
 		}
-
-		// axios.get('http://localhost:3333/users').then(response => {
-		// 	const results = response.data;
-		// 	if (fieldEmail === '' || fieldPassword === '') {
-		// 		alert('Preencha os campos por favor!');
-		// 	} else {
-		// 		login = results.some(({ email, password }) => {
-		// 			return email === fieldEmail && password === fieldPassword;
-		// 		});
-		// 	}
-
-		// 	if (login) {
-		// 		history.push('/loading');
-		// 		setTimeout(() => {
-		// 			history.push('/home');
-		// 		}, 3000);
-		// 	} else {
-		// 		alert('Dados incorretos');
-		// 	}
-		// });
 	}
 
 	return (
