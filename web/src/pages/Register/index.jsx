@@ -9,6 +9,41 @@ function Register() {
 	const [fieldEmail, setFieldEmail] = useState('');
 	const [fieldPassword, setFieldPassword] = useState('');
 	const [fieldConfirmPassword, setFieldConfirmPassword] = useState('');
+	const [validationConfirmPsw, setValidationConfirmPsw] = useState('validate');
+
+	function validatePsw() {
+		if (fieldConfirmPassword === '') {
+			setValidationConfirmPsw('validate');
+		} else if (fieldPassword === fieldConfirmPassword) {
+			setValidationConfirmPsw('validate, valid');
+		} else {
+			setValidationConfirmPsw('validate, invalid');
+		}
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault();
+
+		// axios.get('http://localhost:3333/users').then(response => {
+		// 	const results = response.data;
+		// 	if (fieldEmail === '' || fieldPassword === '') {
+		// 		alert('Preencha os campos por favor!');
+		// 	} else {
+		// 		login = results.some(({ email, password }) => {
+		// 			return email === fieldEmail && password === fieldPassword;
+		// 		});
+		// 	}
+
+		// 	if (login) {
+		// 		history.push('/loading');
+		// 		setTimeout(() => {
+		// 			history.push('/home');
+		// 		}, 3000);
+		// 	} else {
+		// 		alert('Dados incorretos');
+		// 	}
+		// });
+	}
 
 	return (
 		<ContainerForm>
@@ -24,13 +59,6 @@ function Register() {
 								onChange={e => setFieldName(e.target.value)}
 							/>
 							<label htmlFor='first_name'>Nome</label>
-							<span
-								className='helper-text'
-								data-error='wrong'
-								data-success='right'
-							>
-								Helper text
-							</span>
 						</div>
 						<div className='input-field col s6'>
 							<input
@@ -53,7 +81,14 @@ function Register() {
 								value={fieldEmail}
 								onChange={e => setFieldEmail(e.target.value)}
 							/>
-							<label htmlFor='email'>Email</label>
+							<label htmlFor='email'>E-mail</label>
+							<span
+								className='helper-text'
+								data-error='Insira um e-mail válido'
+								data-success='E-mail ok'
+							>
+								Validação do email
+							</span>
 						</div>
 					</div>
 
@@ -65,6 +100,7 @@ function Register() {
 								className='validate'
 								value={fieldPassword}
 								onChange={e => setFieldPassword(e.target.value)}
+								onBlur={() => validatePsw()}
 							/>
 							<label htmlFor='password'>Senha</label>
 						</div>
@@ -72,11 +108,19 @@ function Register() {
 							<input
 								id='confirmPassword'
 								type='password'
-								className='validate'
+								className={validationConfirmPsw}
 								value={fieldConfirmPassword}
 								onChange={e => setFieldConfirmPassword(e.target.value)}
+								onKeyUp={() => validatePsw()}
 							/>
 							<label htmlFor='confirmPassword'>Confirme a senha</label>
+							<span
+								className='helper-text'
+								data-error='As senhas não são iguais'
+								data-success='As senhas estão corretas'
+							>
+								Validação da senha
+							</span>
 						</div>
 					</div>
 					<div className='areaBtn'>
@@ -84,7 +128,7 @@ function Register() {
 							className='customBtn btn waves-effect waves-light'
 							type='submit'
 							name='action'
-							// onClick={handleSubmit}
+							onClick={handleSubmit}
 						>
 							Cadastrar-se
 							<i className='material-icons right'>person_add</i>
