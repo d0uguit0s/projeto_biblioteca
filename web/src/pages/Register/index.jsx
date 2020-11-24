@@ -9,20 +9,51 @@ function Register() {
 	const [fieldEmail, setFieldEmail] = useState('');
 	const [fieldPassword, setFieldPassword] = useState('');
 	const [fieldConfirmPassword, setFieldConfirmPassword] = useState('');
+
+	const [errorField, setErrorField] = useState(false);
+	const [validationName, setValidationName] = useState('validate');
+	const [validationLastName, setValidationLastName] = useState('validate');
 	const [validationConfirmPsw, setValidationConfirmPsw] = useState('validate');
+
+	function validateName() {
+		if (fieldName === '') {
+			setValidationName('validate, invalid');
+			setErrorField(true);
+		} else {
+			setValidationName('validate, valid');
+			setErrorField(false);
+		}
+	}
+
+	function validateLastName() {
+		if (fieldLastName === '') {
+			setValidationLastName('validate, invalid');
+			setErrorField(true);
+		} else {
+			setValidationLastName('validate, valid');
+			setErrorField(false);
+		}
+	}
 
 	function validatePsw() {
 		if (fieldConfirmPassword === '') {
 			setValidationConfirmPsw('validate');
+			setErrorField(false);
 		} else if (fieldPassword === fieldConfirmPassword) {
 			setValidationConfirmPsw('validate, valid');
+			setErrorField(false);
 		} else {
 			setValidationConfirmPsw('validate, invalid');
+			setErrorField(true);
 		}
 	}
 
 	function handleSubmit(e) {
 		e.preventDefault();
+
+		if (!errorField) {
+			console.log('foi');
+		}
 
 		// axios.get('http://localhost:3333/users').then(response => {
 		// 	const results = response.data;
@@ -54,21 +85,33 @@ function Register() {
 							<input
 								id='first_name'
 								type='text'
-								className='validate'
+								className={validationName}
 								value={fieldName}
 								onChange={e => setFieldName(e.target.value)}
+								onBlur={() => validateName()}
+								onKeyUp={() => validateName()}
 							/>
 							<label htmlFor='first_name'>Nome</label>
+							<span
+								className='helper-text'
+								data-error='O nome é obrigatório'
+							/>
 						</div>
 						<div className='input-field col s6'>
 							<input
 								id='last_name'
 								type='text'
-								className='validate'
+								className={validationLastName}
 								value={fieldLastName}
 								onChange={e => setFieldLastName(e.target.value)}
+								onBlur={() => validateLastName()}
+								onKeyUp={() => validateLastName()}
 							/>
 							<label htmlFor='last_name'>Sobrenome</label>
+							<span
+								className='helper-text'
+								data-error='O sobrenome é obrigatório'
+							/>
 						</div>
 					</div>
 

@@ -2,10 +2,11 @@
   "users": [
     {
       "id": 1,
+      "name": "Douglas",
+      "lastName": "Silva",
       "email": "douglas@mail.com",
       "password": "123456"
     }
   ],
-  "books": [
-  ]
+  "books": []
 }
