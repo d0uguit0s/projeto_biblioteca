@@ -1,0 +1,10 @@
+.modal{
+	z-index: 99;
+}
+.hide{
+	display: none;
+}
+
+.show{
+	display: block;
+}

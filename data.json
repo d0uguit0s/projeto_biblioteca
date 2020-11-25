@@ -1,17 +1,19 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Douglas",
       "lastName": "Silva",
       "email": "douglas@mail.com",
-      "password": "123456"
+      "password": "123456",
+      "books": [],
+      "id": 1
     },
     {
       "name": "Andrey",
       "lastName": "Senna",
       "email": "andrey@mail.com",
       "password": "123456",
+      "books": [],
       "id": 2
     },
     {
@@ -19,6 +21,7 @@
       "lastName": "Silva",
       "email": "natan@mail.com",
       "password": "123456",
+      "books": [],
       "id": 3
     },
     {
@@ -26,8 +29,8 @@
       "lastName": "Arlete",
       "email": "leticia@mail.com",
       "password": "leticia123",
+      "books": [],
       "id": 4
     }
-  ],
-  "books": []
+  ]
 }

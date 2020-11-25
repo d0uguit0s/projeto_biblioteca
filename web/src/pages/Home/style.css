@@ -1,0 +1,35 @@
+.titleArea{
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	align-items: center;
+}
+
+.containerContent{
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	margin-bottom: 15px;
+}
+
+.box-content{
+	width: 70%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	box-shadow: 1px 1px 5px #555;
+	border-radius: 15px;
+
+	padding: 15px;
+}
+
+.cardArea{
+	width: 90%;
+}
