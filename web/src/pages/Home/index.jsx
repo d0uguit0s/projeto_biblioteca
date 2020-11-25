@@ -1,18 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Card from '../../components/Card/index';
 import Footer from '../../components/Footer';
 import ModalAddBook from '../../components/ModalAddBook/index';
 import NavBar from '../../components/NavBar';
 import './style.css';
 
-// import { Container } from './styles';
-
-function Home() {
+function Home({ dataUser }) {
+	console.log('data home: ', dataUser);
 	return (
 		<>
 			<NavBar />
 			<div className='titleArea'>
-				<h1>BEM VINDO(A)!</h1>
+				<h1>{`Olá ${dataUser.name}!`}</h1>
 			</div>
 			<div className='containerContent'>
 				<div className='box-content'>
@@ -34,4 +34,8 @@ function Home() {
 	);
 }
 
-export default Home;
+const mapStateToProps = state => ({
+	dataUser: state.dataUser.state,
+});
+
+export default connect(mapStateToProps)(Home);

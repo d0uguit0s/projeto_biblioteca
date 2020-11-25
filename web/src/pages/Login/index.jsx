@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
 import axios from 'axios';
 import ContainerForm from '../../components/ContainerForm/index';
 import './style.css';
+import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
 
-function Login() {
+function Login({ persistData }) {
 	const [fieldEmail, setFieldEmail] = useState('');
 	const [fieldPassword, setFieldPassword] = useState('');
 	const history = useHistory();
@@ -18,8 +20,17 @@ function Login() {
 			if (fieldEmail === '' || fieldPassword === '') {
 				alert('Preencha os campos por favor!');
 			} else {
-				login = results.some(({ email, password }) => {
-					return email === fieldEmail && password === fieldPassword;
+				login = results.some(result => {
+					if (
+						result.email === fieldEmail &&
+						result.password === fieldPassword
+					) {
+						persistData(result);
+					}
+					return (
+						result.email === fieldEmail &&
+						result.password === fieldPassword
+					);
 				});
 			}
 
@@ -85,4 +96,9 @@ function Login() {
 	);
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+	persistData: dataUser =>
+		dispatch(saveDataUserActions.successSignIn(dataUser)),
+});
+
+export default connect(null, mapDispatchToProps)(Login);

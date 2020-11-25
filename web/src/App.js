@@ -1,12 +1,14 @@
 import React from 'react';
-// import Loading from './components/Loading';
-// import NavBar from './components/NavBar';
-// import Login from './pages/Login/index';
+import { Provider } from 'react-redux';
 import Routes from './Routes';
+import store from './store';
 
 function App() {
-	return <Routes />;
-	// return <Loading />;
+	return (
+		<Provider store={store}>
+			<Routes />
+		</Provider>
+	);
 }
 
 export default App;
