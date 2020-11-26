@@ -52,6 +52,7 @@
 			  ]
 			}
 		],
-		"import/no-extraneous-dependencies": [0, {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}]
+		"import/no-extraneous-dependencies": [0, {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
+		"no-unused-vars": [0, { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
 	}
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import Card from '../../components/Card/index';
 import Footer from '../../components/Footer';
 import ModalAddBook from '../../components/ModalAddBook/index';
@@ -7,7 +8,12 @@ import NavBar from '../../components/NavBar';
 import './style.css';
 
 function Home({ dataUser }) {
-	console.log('data home: ', dataUser);
+	const history = useHistory();
+
+	if (!dataUser) {
+		history.push('/');
+		return null;
+	}
 	return (
 		<>
 			<NavBar />
@@ -18,14 +24,9 @@ function Home({ dataUser }) {
 				<div className='box-content'>
 					<ModalAddBook />
 					<div className='cardArea'>
-						<Card
-							title='A menina que roubava livros'
-							text='Uma menina que rouba livros :v'
-						/>
-						<Card
-							title='A menina que roubava livros'
-							text='Uma menina que rouba livros :v'
-						/>
+						{dataUser.books.map(({ title, synopsis }) => (
+							<Card key={synopsis} title={title} text={synopsis} />
+						))}
 					</div>
 				</div>
 			</div>
@@ -35,7 +36,7 @@ function Home({ dataUser }) {
 }
 
 const mapStateToProps = state => ({
-	dataUser: state.dataUser.state,
+	dataUser: state.dataUser,
 });
 
 export default connect(mapStateToProps)(Home);

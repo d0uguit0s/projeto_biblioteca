@@ -7,8 +7,8 @@ import './style.css';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
 
 function Login({ persistData }) {
-	const [fieldEmail, setFieldEmail] = useState('');
-	const [fieldPassword, setFieldPassword] = useState('');
+	const [fieldEmail, setFieldEmail] = useState('douglas@mail.com');
+	const [fieldPassword, setFieldPassword] = useState('123456');
 	const history = useHistory();
 	let login;
 
@@ -20,21 +20,26 @@ function Login({ persistData }) {
 			if (fieldEmail === '' || fieldPassword === '') {
 				alert('Preencha os campos por favor!');
 			} else {
-				login = results.some(result => {
+				console.log(results);
+				results.forEach(result => {
+					console.log(result);
 					if (
 						result.email === fieldEmail &&
 						result.password === fieldPassword
 					) {
+						login = true;
 						persistData(result);
 					}
-					return (
-						result.email === fieldEmail &&
-						result.password === fieldPassword
-					);
+					login = false;
 				});
+
+				// array.forEach(element => {
+
+				// });
 			}
 
 			if (login) {
+				console.log('login: ', login);
 				history.push('/loading');
 				setTimeout(() => {
 					history.push('/home');
