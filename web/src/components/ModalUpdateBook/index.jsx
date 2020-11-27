@@ -1,103 +1,111 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Modal, Button } from 'react-materialize';
 import axios from 'axios';
-import './style.css';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
+import 'materialize-css/dist/css/materialize.min.css';
+import './style.css';
 
-function ModalUpdateBook({ idUser, booksState, addBook }) {
-	const [show, setShow] = useState('modal hide');
-	const [fieldTitle, setFieldTitle] = useState('');
-	const [fieldSynopsis, setFieldSynopsis] = useState('');
-	const [fieldRead, setFieldRead] = useState(false);
+function ModalUpdateBook({ book, booksState, idUser, updateBook }) {
+	const [fieldTitle, setFieldTitle] = useState(book.title);
+	const [fieldSynopsis, setFieldSynopsis] = useState(book.synopsis);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		// if (fieldTitle && fieldSynopsis) {
-		// 	// console.log('id: ', idUser);
-		// 	const book = {
-		// 		title: fieldTitle,
-		// 		synopsis: fieldSynopsis,
-		// 		read: fieldRead,
-		// 		deleted: false,
-		// 		id: booksState.length,
-		// 	};
-		// 	console.log('booksState: ', booksState);
-		// 	const newBooks = [...booksState, book];
-		// 	// console.log('new: ', newBooks);
-		// 	addBook(book);
+		if (fieldTitle && fieldSynopsis) {
+			const Newbook = {
+				...book,
+				title: fieldTitle,
+				synopsis: fieldSynopsis,
+			};
+			updateBook(Newbook);
 
-		// 	axios
-		// 		.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
-		// 		.then(() => {
-		// 			setFieldTitle('');
-		// 			setFieldSynopsis('');
-		// 			setShow('modal hide');
-		// 		})
-		// 		.catch(error => alert(error));
-		// }
-		console.log('submit update');
+			const newBooks = booksState.map((b, i) =>
+				i === book.id
+					? { ...b, title: Newbook.title, synopsis: Newbook.synopsis }
+					: b
+			);
+
+			axios
+				.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
+				.then(() => {
+					setFieldTitle('');
+					setFieldSynopsis('');
+				})
+				.catch(error => alert(error));
+		}
 	}
 
 	return (
-		<>
-			<a
-				className='button'
-				onClick={() => setShow('modal show')}
-				onKeyPress={() => setShow('modal show')}
-			>
-				<i className='material-icons btn_edit'>create</i>
-			</a>
-
+		<Modal
+			actions={[
+				<Button flat modal='close' node='button' waves='red'>
+					Cancelar
+				</Button>,
+				<Button
+					flat
+					modal='close'
+					node='button'
+					waves='green'
+					onClick={handleSubmit}
+				>
+					Salvar
+				</Button>,
+			]}
+			bottomSheet={false}
+			fixedFooter={false}
+			header='Modifique as informações do livro'
+			id='Modal-0'
+			open={false}
+			options={{
+				dismissible: false,
+				endingTop: '10%',
+				inDuration: 250,
+				onCloseEnd: null,
+				onCloseStart: null,
+				onOpenEnd: null,
+				onOpenStart: null,
+				opacity: 0.5,
+				outDuration: 250,
+				preventScrolling: true,
+				startingTop: '4%',
+			}}
+			//   root={[object HTMLBodyElement]}
+			trigger={
+				<a className='button'>
+					<i className='material-icons btn_edit'>create</i>
+				</a>
+			}
+		>
 			<form className='col s12'>
-				<div id='modal2' className={show}>
-					<div className='modal-content'>
-						<h4>Insira as informações do livro</h4>
-						<div className='row'>
-							<div className='input-field col s12'>
-								<i className='material-icons prefix'>book</i>
-								<input
-									id='title2'
-									type='text'
-									className='validate'
-									value={fieldTitle}
-									onChange={e => setFieldTitle(e.target.value)}
-								/>
-								<label htmlFor='title2'>Título</label>
-							</div>
-						</div>
-						<div className='row'>
-							<div className='input-field col s12'>
-								<i className='material-icons prefix'>message</i>
-								<textarea
-									id='textarea2'
-									className='materialize-textarea'
-									value={fieldSynopsis}
-									onChange={e => setFieldSynopsis(e.target.value)}
-								/>
-								<label htmlFor='textarea2'>Sinopse</label>
-							</div>
-						</div>
+				<div className='row'>
+					<div className='input-field col s12'>
+						<i className='material-icons prefix'>book</i>
+						<input
+							id='title'
+							type='text'
+							className='validate'
+							value={fieldTitle}
+							onChange={e => setFieldTitle(e.target.value)}
+						/>
+						<label htmlFor='title'>Título</label>
 					</div>
-					<div className='modal-footer'>
-						<a
-							className='modal-close waves-effect waves-green btn-flat'
-							onClick={() => setShow('modal hide')}
-							onKeyPress={() => setShow('modal hide')}
-						>
-							Cancelar
-						</a>
-						<a
-							className='modal-close waves-effect waves-green btn-flat'
-							onClick={handleSubmit}
-							onKeyPress={handleSubmit}
-						>
-							Salvar
-						</a>
+				</div>
+				<div className='row'>
+					<div className='input-field col s12'>
+						<i className='material-icons prefix'>message</i>
+						<textarea
+							id='textarea1'
+							className='materialize-textarea'
+							value={fieldSynopsis}
+							onChange={e => setFieldSynopsis(e.target.value)}
+						/>
+						<label htmlFor='textarea1'>Sinopse</label>
 					</div>
 				</div>
 			</form>
-		</>
+		</Modal>
 	);
 }
 
@@ -107,7 +115,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	addBook: book => dispatch(saveDataUserActions.addBook(book)),
+	updateBook: book => dispatch(saveDataUserActions.updateBook(book)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalUpdateBook);
