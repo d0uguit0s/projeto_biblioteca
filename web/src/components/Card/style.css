@@ -1,7 +1,27 @@
-.btn_done{
-	color: greenyellow;
+.btn_done_checked{
+	color: #adff2f;
+}
+
+.btn_done_checked:hover{
+	color: #808080;
+}
+
+.btn_done_unchecked{
+	color: #808080;
+}
+
+.btn_done_unchecked:hover{
+	color: #adff2f;
 }
 
 .btn_delete{
-	color: red;
+	color: #ff0000;
+}
+
+.btn_delete:hover{
+	color: #aa0000;
+}
+
+.button:hover{
+	cursor: pointer;
 }
