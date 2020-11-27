@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -112,3 +113,8 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+=======
+import App from './src/index';
+
+export default App;
+>>>>>>> Stashed changes
