@@ -53,6 +53,12 @@
 			}
 		],
 		"import/no-extraneous-dependencies": [0, {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}],
-		"no-unused-vars": [0, { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
+		"no-unused-vars": [0, { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+		"react/jsx-props-no-spreading": [0, {
+			"html": "ignore",
+			"custom": "ignore",
+			"explicitSpread": "ignore",
+			"exceptions": []
+	  }]
 	}
 }

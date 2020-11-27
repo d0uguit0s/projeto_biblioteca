@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import Card from '../../components/Card/index';
 import Footer from '../../components/Footer';
 import ModalAddBook from '../../components/ModalAddBook/index';
@@ -8,12 +7,6 @@ import NavBar from '../../components/NavBar';
 import './style.css';
 
 function Home({ dataUser }) {
-	const history = useHistory();
-
-	if (!dataUser) {
-		history.push('/');
-		return null;
-	}
 	return (
 		<>
 			<NavBar />
@@ -23,10 +16,18 @@ function Home({ dataUser }) {
 			<div className='containerContent'>
 				<div className='box-content'>
 					<ModalAddBook />
+					{dataUser.books.length === 0 && (
+						<div className='msgEmpty'>
+							<h5>
+								Biblioteca vazia, clique no botão acima para começar a
+								criar sua bibilioteca pessoal!
+							</h5>
+						</div>
+					)}
 					<div className='cardArea'>
-						{dataUser.books.map(({ title, synopsis }) => (
-							<Card key={synopsis} title={title} text={synopsis} />
-						))}
+						{dataUser.books.map(
+							book => !book.deleted && <Card key={book.id} book={book} />
+						)}
 					</div>
 				</div>
 			</div>
