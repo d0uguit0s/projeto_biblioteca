@@ -1,6 +1,7 @@
 export const Types = {
 	SUCCESS_SIGN_IN: 'SUCCESS_SIGN_IN',
 	ADD_BOOK: 'ADD_BOOK',
+	DELETE_BOOK: 'DELETE_BOOK',
 };
 
 const INITIAL_STATE = {
@@ -28,6 +29,13 @@ export default function dataUserReducer(state = INITIAL_STATE, action) {
 		case Types.ADD_BOOK:
 			console.log('action book: ', action.book);
 			return { ...state, books: [...state.books, action.book] };
+		case Types.DELETE_BOOK:
+			return {
+				...state,
+				books: state.books.map((book, i) =>
+					i === action.book.id ? { ...book, deleted: true } : book
+				),
+			};
 		default:
 			return state;
 	}
@@ -40,6 +48,10 @@ export const Creators = {
 	}),
 	addBook: book => ({
 		type: Types.ADD_BOOK,
+		book,
+	}),
+	deleteBook: book => ({
+		type: Types.DELETE_BOOK,
 		book,
 	}),
 };
