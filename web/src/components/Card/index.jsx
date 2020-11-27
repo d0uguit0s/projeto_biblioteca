@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
+import ModalUpdateBook from '../ModalUpdateBook';
 import './style.css';
 
 function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
@@ -42,26 +43,27 @@ function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
 					<span className='card-title'>{book.title}</span>
 					<p>{book.synopsis}</p>
 				</div>
-				<div className='card-action'>
+				<div className='card-action fotter-card'>
 					<a
 						className='button'
 						onClick={() => changeStatusB()}
 						onKeyPress={() => changeStatusB()}
 					>
 						<i
-							className={`material-icons right ${
+							className={`material-icons ${
 								check ? 'btn_done_checked' : 'btn_done_unchecked'
 							}`}
 						>
 							done
 						</i>
 					</a>
+					<ModalUpdateBook />
 					<a
 						className='button'
 						onClick={() => deleteB()}
 						onKeyPress={() => deleteB()}
 					>
-						<i className='material-icons right btn_delete'>delete</i>
+						<i className='material-icons btn_delete'>delete</i>
 					</a>
 				</div>
 			</div>
