@@ -1,15 +1,38 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
 import './style.css';
 
-function Card({ book }) {
-	const [check, setCheck] = useState(
-		book.read ? 'btn_done_checked' : 'btn_done_unchecked'
-	);
+function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
+	const [check, setCheck] = useState(book.read);
 
 	function deleteB() {
-		console.log('delete');
+		deleteBook(book);
+
+		const newBooks = booksState.map((b, i) =>
+			i === book.id ? { ...b, deleted: true } : b
+		);
+
+		axios
+			.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
+			.then(() => {})
+			.catch(error => alert(error));
+	}
+
+	function changeStatusB() {
+		console.log('change');
+		changeStatusBook(book);
+		setCheck(!check);
+
+		const newBooks = booksState.map((b, i) =>
+			i === book.id ? { ...b, read: !b.read } : b
+		);
+
+		axios
+			.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
+			.then(() => {})
+			.catch(error => alert(error));
 	}
 
 	return (
@@ -17,20 +40,26 @@ function Card({ book }) {
 			<div className='card blue-grey darken-1'>
 				<div className='card-content white-text'>
 					<span className='card-title'>{book.title}</span>
-					<p>{book.text}</p>
+					<p>{book.synopsis}</p>
 				</div>
 				<div className='card-action'>
 					<a
 						className='button'
-						onClick={() => console.log('done')}
-						onKeyPress={() => deleteB()}
+						onClick={() => changeStatusB()}
+						onKeyPress={() => changeStatusB()}
 					>
-						<i className={`material-icons right ${check}`}>done</i>
+						<i
+							className={`material-icons right ${
+								check ? 'btn_done_checked' : 'btn_done_unchecked'
+							}`}
+						>
+							done
+						</i>
 					</a>
 					<a
 						className='button'
-						onClick={() => console.log('delete')}
-						onKeyPress={() => console.log('delete')}
+						onClick={() => deleteB()}
+						onKeyPress={() => deleteB()}
 					>
 						<i className='material-icons right btn_delete'>delete</i>
 					</a>
@@ -40,8 +69,15 @@ function Card({ book }) {
 	);
 }
 
-const mapDispacthToProps = dispatch => ({
-	deleteBook: book => dispatch(saveDataUserActions.deleteBook(book)),
+const mapStateToProps = state => ({
+	idUser: state.dataUser.id,
+	booksState: state.dataUser.books,
 });
 
-export default connect(mapDispacthToProps)(Card);
+const mapDispacthToProps = dispatch => ({
+	deleteBook: book => dispatch(saveDataUserActions.deleteBook(book)),
+	changeStatusBook: book =>
+		dispatch(saveDataUserActions.changeStatusBook(book)),
+});
+
+export default connect(mapStateToProps, mapDispacthToProps)(Card);

@@ -16,14 +16,14 @@
         {
           "title": "Teste ativo",
           "synopsis": "testando ativo",
-          "read": true,
+          "read": false,
           "deleted": false,
           "id": 1
         },
         {
           "title": "Verificando",
           "synopsis": "Livro de verificação",
-          "read": true,
+          "read": false,
           "deleted": false,
           "id": 2
         }
