@@ -2,6 +2,7 @@ export const Types = {
 	SUCCESS_SIGN_IN: 'SUCCESS_SIGN_IN',
 	ADD_BOOK: 'ADD_BOOK',
 	DELETE_BOOK: 'DELETE_BOOK',
+	CHANGE_STATUS_BOOK: 'CHANGE_STATUS_BOOK',
 };
 
 const INITIAL_STATE = {
@@ -36,6 +37,13 @@ export default function dataUserReducer(state = INITIAL_STATE, action) {
 					i === action.book.id ? { ...book, deleted: true } : book
 				),
 			};
+		case Types.CHANGE_STATUS_BOOK:
+			return {
+				...state,
+				books: state.books.map((book, i) =>
+					i === action.book.id ? { ...book, read: !book.read } : book
+				),
+			};
 		default:
 			return state;
 	}
@@ -52,6 +60,10 @@ export const Creators = {
 	}),
 	deleteBook: book => ({
 		type: Types.DELETE_BOOK,
+		book,
+	}),
+	changeStatusBook: book => ({
+		type: Types.CHANGE_STATUS_BOOK,
 		book,
 	}),
 };
