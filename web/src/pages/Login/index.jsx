@@ -15,39 +15,30 @@ function Login({ persistData }) {
 	function handleSubmit(e) {
 		e.preventDefault();
 
-		axios.get('http://localhost:3333/users').then(response => {
-			const results = response.data;
-			if (fieldEmail === '' || fieldPassword === '') {
-				alert('Preencha os campos por favor!');
-			} else {
-				console.log(results);
-				results.forEach(result => {
-					console.log(result);
-					if (
-						result.email === fieldEmail &&
-						result.password === fieldPassword
-					) {
-						login = true;
-						persistData(result);
-					}
-					login = false;
-				});
-
-				// array.forEach(element => {
-
-				// });
-			}
-
-			if (login) {
-				console.log('login: ', login);
-				history.push('/loading');
-				setTimeout(() => {
-					history.push('/home');
-				}, 3000);
-			} else {
-				alert('Dados incorretos');
-			}
-		});
+		axios
+			.get('http://localhost:3333/users')
+			.then(response => {
+				const results = response.data;
+				if (fieldEmail === '' || fieldPassword === '') {
+					alert('Preencha os campos por favor!');
+				} else {
+					results.forEach(result => {
+						if (
+							result.email === fieldEmail &&
+							result.password === fieldPassword
+						) {
+							persistData(result);
+							history.push('/loading');
+							setTimeout(() => {
+								history.push('/home');
+							}, 3000);
+						}
+					});
+				}
+			})
+			.catch(error => {
+				alert('Dados incorretos', error);
+			});
 	}
 
 	return (

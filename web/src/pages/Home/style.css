@@ -30,6 +30,16 @@
 	padding: 15px;
 }
 
+.msgEmpty{
+	height: 50vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+}
+
 .cardArea{
 	width: 90%;
 }

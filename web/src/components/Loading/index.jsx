@@ -1,8 +1,6 @@
 import React from 'react';
 import './style.css';
 
-// import { Container } from './styles';
-
 function Loading() {
 	return (
 		<div className='containerLoading'>

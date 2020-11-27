@@ -7,8 +7,25 @@
       "password": "123456",
       "books": [
         {
-          "title": "A menina que roubava livros",
-          "synopsis": "Uma menina que roubava livros :v"
+          "title": "Livro teste",
+          "synopsis": "Apenas um livro de teste",
+          "read": false,
+          "deleted": false,
+          "id": 0
+        },
+        {
+          "title": "Teste ativo",
+          "synopsis": "testando ativo",
+          "read": true,
+          "deleted": false,
+          "id": 1
+        },
+        {
+          "title": "Verificando",
+          "synopsis": "Livro de verificação",
+          "read": true,
+          "deleted": false,
+          "id": 2
         }
       ],
       "id": 1

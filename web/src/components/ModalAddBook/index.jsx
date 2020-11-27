@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-// import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './style.css';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
@@ -9,31 +8,28 @@ function ModalAddBook({ idUser, booksState, addBook }) {
 	const [show, setShow] = useState('modal hide');
 	const [fieldTitle, setFieldTitle] = useState('');
 	const [fieldSynopsis, setFieldSynopsis] = useState('');
-
-	// const history = useHistory();
+	const [fieldRead, setFieldRead] = useState(false);
 
 	function handleSubmit(e) {
 		e.preventDefault();
 
 		if (fieldTitle && fieldSynopsis) {
-			console.log('id: ', idUser);
+			// console.log('id: ', idUser);
 			const book = {
 				title: fieldTitle,
 				synopsis: fieldSynopsis,
+				read: fieldRead,
+				deleted: false,
+				id: booksState.length,
 			};
 			console.log('booksState: ', booksState);
 			const newBooks = [...booksState, book];
-			console.log('new: ', newBooks);
+			// console.log('new: ', newBooks);
 			addBook(book);
 
 			axios
 				.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
 				.then(() => {
-					alert('Livro adicionado com sucesso!');
-					// history.push('/loading');
-					// setTimeout(() => {
-					// 	history.push('/home');
-					// }, 3000);
 					setFieldTitle('');
 					setFieldSynopsis('');
 					setShow('modal hide');
@@ -81,6 +77,28 @@ function ModalAddBook({ idUser, booksState, addBook }) {
 								<label htmlFor='textarea1'>Sinopse</label>
 							</div>
 						</div>
+
+						<p>
+							<label>
+								<input
+									name='read'
+									type='radio'
+									onChange={() => setFieldRead(true)}
+								/>
+								<span>Já li</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input
+									name='read'
+									type='radio'
+									onChange={() => setFieldRead(false)}
+									checked
+								/>
+								<span>Ainda vou ler</span>
+							</label>
+						</p>
 					</div>
 					<div className='modal-footer'>
 						<a
