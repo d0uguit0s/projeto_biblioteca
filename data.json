@@ -9,30 +9,37 @@
         {
           "title": "Livro teste",
           "synopsis": "Apenas um livro de teste",
-          "read": false,
+          "read": true,
           "deleted": false,
           "id": 0
         },
         {
           "title": "Teste ativo",
           "synopsis": "testando ativo",
-          "read": false,
-          "deleted": false,
+          "read": true,
+          "deleted": true,
           "id": 1
         },
         {
           "title": "Verificando",
           "synopsis": "Livro de verificação",
-          "read": false,
+          "read": true,
           "deleted": false,
           "id": 2
         },
         {
           "title": "Teste novo modal",
           "synopsis": "Testando novo modal",
-          "read": false,
+          "read": true,
           "deleted": false,
           "id": 3
+        },
+        {
+          "title": "zoado",
+          "synopsis": "Livro zoado",
+          "read": false,
+          "deleted": true,
+          "id": 4
         }
       ],
       "id": 1

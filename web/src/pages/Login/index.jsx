@@ -10,7 +10,6 @@ function Login({ persistData }) {
 	const [fieldEmail, setFieldEmail] = useState('douglas@mail.com');
 	const [fieldPassword, setFieldPassword] = useState('123456');
 	const history = useHistory();
-	let login;
 
 	function handleSubmit(e) {
 		e.preventDefault();
