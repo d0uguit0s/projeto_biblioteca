@@ -7,6 +7,7 @@ import Login from '../pages/Login/index';
 import Register from '../pages/Register';
 import User from '../pages/User/index';
 import PrivateRoutes from './Private.routes';
+import Trash from '../pages/Trash';
 import Loading from '../components/Loading';
 
 function Routes() {
@@ -17,6 +18,7 @@ function Routes() {
 				<Route path='/register' component={Register} />
 				<Route path='/forgetPsw' component={ForgetPsw} />
 				<PrivateRoutes path='/home' component={Home} />
+				<PrivateRoutes path='/trash' component={Trash} />
 				<Route path='/loading' component={Loading} />
 			</Switch>
 		</BrowserRouter>

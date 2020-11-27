@@ -43,29 +43,31 @@ function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
 					<span className='card-title'>{book.title}</span>
 					<p>{book.synopsis}</p>
 				</div>
-				<div className='card-action fotter-card'>
-					<a
-						className='button'
-						onClick={() => changeStatusB()}
-						onKeyPress={() => changeStatusB()}
-					>
-						<i
-							className={`material-icons ${
-								check ? 'btn_done_checked' : 'btn_done_unchecked'
-							}`}
+				{!book.deleted && (
+					<div className='card-action fotter-card'>
+						<a
+							className='button'
+							onClick={() => changeStatusB()}
+							onKeyPress={() => changeStatusB()}
 						>
-							done
-						</i>
-					</a>
-					<ModalUpdateBook />
-					<a
-						className='button'
-						onClick={() => deleteB()}
-						onKeyPress={() => deleteB()}
-					>
-						<i className='material-icons btn_delete'>delete</i>
-					</a>
-				</div>
+							<i
+								className={`material-icons ${
+									check ? 'btn_done_checked' : 'btn_done_unchecked'
+								}`}
+							>
+								done
+							</i>
+						</a>
+						<ModalUpdateBook book={book} />
+						<a
+							className='button'
+							onClick={() => deleteB()}
+							onKeyPress={() => deleteB()}
+						>
+							<i className='material-icons btn_delete'>delete</i>
+						</a>
+					</div>
+				)}
 			</div>
 		</div>
 	);

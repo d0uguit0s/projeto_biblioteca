@@ -1,19 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Creators as saveDataUserActions } from '../store/ducks/dataUser';
 
-function NavBar() {
+function NavBar({ successSignOut }) {
 	return (
 		<nav>
 			<div className='nav-wrapper'>
-				<a href='#' className='brand-logo'>
+				<Link to='/home' className='brand-logo'>
 					Logo
-				</a>
+				</Link>
 				<ul id='nav-mobile' className='right hide-on-med-and-down'>
 					<li>
-						<Link to='/user'>Usuário</Link>
+						<Link to='/trash'>
+							<i className='material-icons left'>delete</i>
+							Lixeira
+						</Link>
 					</li>
 					<li>
-						<Link to='/'>
+						<Link to='/' onClick={successSignOut}>
 							<i className='material-icons left'>login</i>
 							Sair
 						</Link>
@@ -30,4 +35,8 @@ function NavBar() {
 	);
 }
 
-export default NavBar;
+const mapDispacthToProps = dispatch => ({
+	successSignOut: () => dispatch(saveDataUserActions.successSignOut()),
+});
+
+export default connect(null, mapDispacthToProps)(NavBar);
