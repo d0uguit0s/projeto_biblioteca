@@ -28,7 +28,7 @@
           "id": 2
         },
         {
-          "title": "Teste novo modal",
+          "title": "Teste novo",
           "synopsis": "Testando novo modal",
           "read": true,
           "deleted": false,
@@ -40,6 +40,13 @@
           "read": false,
           "deleted": true,
           "id": 4
+        },
+        {
+          "title": "Livro teste",
+          "synopsis": "Um livro apenas para teste",
+          "read": true,
+          "deleted": true,
+          "id": 5
         }
       ],
       "id": 1
