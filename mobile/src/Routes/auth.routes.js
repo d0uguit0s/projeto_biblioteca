@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from '../Pages/Authentication/Login';
+
+import Login from '../Pages/Auth/Login';
 
 function AuthRoutes() {
 	const AuthStack = createStackNavigator();

@@ -36,11 +36,30 @@ module.exports = {
 		'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
 		'no-nested-ternary': 'off',
 		'import/no-extraneous-dependencies': [
-			'ignore',
+			'error',
 			{
-				devDependencies: false,
-				optionalDependencies: false,
-				peerDependencies: false,
+				devDependencies: true,
+				optionalDependencies: true,
+				peerDependencies: true,
+			},
+		],
+		'import/order': [
+			'error',
+			{
+				groups: ['builtin', 'external', 'internal'],
+				pathGroups: [
+					{
+						pattern: 'react',
+						group: 'external',
+						position: 'before',
+					},
+				],
+				pathGroupsExcludedImportTypes: ['react'],
+				'newlines-between': 'always',
+				alphabetize: {
+					order: 'asc',
+					caseInsensitive: true,
+				},
 			},
 		],
 	},

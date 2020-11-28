@@ -1,8 +1,16 @@
 import React from 'react';
-import AuthRoutes from './auth.routes';
 
-function Routes() {
-	return <AuthRoutes />;
+import { connect } from 'react-redux';
+
+import AuthRoutes from './auth.routes';
+import PrivateRoutes from './private.routes';
+
+function Routes({ id }) {
+	return !id ? <AuthRoutes /> : <PrivateRoutes />;
 }
 
-export default Routes;
+const mapStateToProps = state => ({
+	id: state.dataUser.id,
+});
+
+export default connect(mapStateToProps)(Routes);
