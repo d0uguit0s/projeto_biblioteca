@@ -1,34 +1,37 @@
 import React from 'react';
 
-import { Text, View } from 'react-native';
-import { ListItem, Icon } from 'react-native-elements';
+import { FlatList } from 'react-native';
+import { ListItem } from 'react-native-elements';
+import { connect } from 'react-redux';
 
-import { styles } from './style';
+// import { styles } from './style';
 
-function Books() {
-	const list = [
-		{
-			title: 'Appointments',
-			icon: 'av-timer',
-		},
-		{
-			title: 'Trips',
-			icon: 'flight-takeoff',
-		},
-	];
-	return (
-		<View>
-			{list.map((item, i) => (
-				<ListItem key={i} bottomDivider>
-					<Icon name={item.icon} />
+function Books({ dataUser }) {
+	const renderBook = ({ item }) => {
+		if (!item.deleted)
+			return (
+				<ListItem key={item.id} bottomDivider>
 					<ListItem.Content>
 						<ListItem.Title>{item.title}</ListItem.Title>
 					</ListItem.Content>
 					<ListItem.Chevron />
 				</ListItem>
-			))}
-		</View>
+			);
+
+		return null;
+	};
+
+	return (
+		<FlatList
+			data={dataUser.books}
+			renderItem={renderBook}
+			keyExtractor={book => book.id.toString()}
+		/>
 	);
 }
 
-export default Books;
+const mapStateToProps = state => ({
+	dataUser: state.dataUser,
+});
+
+export default connect(mapStateToProps)(Books);
