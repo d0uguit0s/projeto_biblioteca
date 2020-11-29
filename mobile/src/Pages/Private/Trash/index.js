@@ -1,11 +1,37 @@
 import React from 'react';
 
-import { Text } from 'react-native';
+import { FlatList } from 'react-native';
+import { ListItem } from 'react-native-elements';
+import { connect } from 'react-redux';
 
-import { styles } from './style';
+// import { styles } from './style';
 
-function Trash() {
-	return <Text style={styles.container}>Trash</Text>;
+function Trash({ dataUser }) {
+	const renderDeletedBook = ({ item }) => {
+		if (item.deleted)
+			return (
+				<ListItem key={item.id} bottomDivider>
+					<ListItem.Content>
+						<ListItem.Title>{item.title}</ListItem.Title>
+					</ListItem.Content>
+					<ListItem.Chevron />
+				</ListItem>
+			);
+
+		return null;
+	};
+
+	return (
+		<FlatList
+			data={dataUser.books}
+			renderItem={renderDeletedBook}
+			keyExtractor={book => book.id.toString()}
+		/>
+	);
 }
 
-export default Trash;
+const mapStateToProps = state => ({
+	dataUser: state.dataUser,
+});
+
+export default connect(mapStateToProps)(Trash);
