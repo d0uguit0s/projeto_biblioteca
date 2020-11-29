@@ -15,7 +15,7 @@ function Login({ persistData }) {
 		e.preventDefault();
 
 		axios
-			.get('http://192.168.2.4:3333/users')
+			.get(`http://192.168.2.4:3333/users`)
 			.then(response => {
 				const results = response.data;
 				if (fieldEmail === '' || fieldPassword === '') {
