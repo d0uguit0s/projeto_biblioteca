@@ -8,7 +8,7 @@ function StackTrash() {
 	const PrivateStack = createStackNavigator();
 	return (
 		<PrivateStack.Navigator>
-			<PrivateStack.Screen name='Trash' component={Trash} />
+			<PrivateStack.Screen name='Lixeira' component={Trash} />
 		</PrivateStack.Navigator>
 	);
 }

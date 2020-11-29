@@ -6,11 +6,14 @@ import { connect } from 'react-redux';
 
 // import { styles } from './style';
 
-function Books({ dataUser }) {
+function Books({ dataUser, navigation }) {
 	const renderBook = ({ item }) => {
 		if (item.deleted)
 			return (
-				<ListItem bottomDivider onPress={() => console.log('cliclou')}>
+				<ListItem
+					bottomDivider
+					onPress={() => navigation.navigate('Detalhes', { book: item })}
+				>
 					<Icon
 						name='check'
 						type='feather'

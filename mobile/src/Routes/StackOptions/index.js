@@ -8,7 +8,7 @@ function StackOptions() {
 	const PrivateStack = createStackNavigator();
 	return (
 		<PrivateStack.Navigator>
-			<PrivateStack.Screen name='Options' component={Options} />
+			<PrivateStack.Screen name='Opções' component={Options} />
 		</PrivateStack.Navigator>
 	);
 }

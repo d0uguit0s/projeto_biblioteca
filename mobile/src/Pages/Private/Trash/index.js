@@ -10,7 +10,7 @@ function Trash({ dataUser }) {
 	const renderDeletedBook = ({ item }) => {
 		if (item.deleted)
 			return (
-				<ListItem bottomDivider onPress={() => console.log('cliclou')}>
+				<ListItem bottomDivider>
 					<ListItem.Content>
 						<ListItem.Title>{item.title}</ListItem.Title>
 						<ListItem.Subtitle>
@@ -19,7 +19,6 @@ function Trash({ dataUser }) {
 								: item.synopsis}
 						</ListItem.Subtitle>
 					</ListItem.Content>
-					<ListItem.Chevron />
 				</ListItem>
 			);
 

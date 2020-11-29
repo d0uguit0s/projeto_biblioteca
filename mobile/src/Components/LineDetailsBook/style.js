@@ -2,14 +2,16 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
+		flexDirection: 'row',
 	},
-	card: {
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	title: {
+
+	label: {
 		fontWeight: 'bold',
+		fontSize: 18,
+		marginBottom: 10,
+	},
+
+	txt: {
 		fontSize: 18,
 	},
 });
