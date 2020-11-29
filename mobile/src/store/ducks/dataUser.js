@@ -30,6 +30,7 @@ export default function dataUserReducer(state = INITIAL_STATE, action) {
 				id: action.dataUser.id,
 			};
 		case Types.SUCCESS_SIGN_OUT:
+			console.log('saiu');
 			return { INITIAL_STATE };
 		case Types.ADD_BOOK:
 			console.log('action book: ', action.book);

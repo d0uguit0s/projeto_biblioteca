@@ -3,6 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import StackBooks from './StackBooks';
+import StackOptions from './StackOptions';
 import StackTrash from './StackTrash';
 
 function PrivateRoutes() {
@@ -30,6 +31,7 @@ function PrivateRoutes() {
 		>
 			<PrivateTab.Screen name='Books' component={StackBooks} />
 			<PrivateTab.Screen name='Trash' component={StackTrash} />
+			<PrivateTab.Screen name='Options' component={StackOptions} />
 		</PrivateTab.Navigator>
 	);
 }
