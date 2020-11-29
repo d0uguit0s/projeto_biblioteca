@@ -64,7 +64,7 @@ function Register() {
 
 		if (!errorField) {
 			axios
-				.post('http://localhost:3333/users', data)
+				.post('http://192.168.2.4:3333/users', data)
 				.then(() => {
 					alert('Usuário criado com sucesso!');
 					history.push('/loading');

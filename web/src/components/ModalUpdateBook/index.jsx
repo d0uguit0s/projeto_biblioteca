@@ -28,7 +28,9 @@ function ModalUpdateBook({ book, booksState, idUser, updateBook }) {
 			);
 
 			axios
-				.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
+				.patch(`http://192.168.2.4:3333/users/${idUser}`, {
+					books: newBooks,
+				})
 				.then(() => {
 					setFieldTitle('');
 					setFieldSynopsis('');
