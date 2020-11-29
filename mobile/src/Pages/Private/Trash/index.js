@@ -10,9 +10,14 @@ function Trash({ dataUser }) {
 	const renderDeletedBook = ({ item }) => {
 		if (item.deleted)
 			return (
-				<ListItem key={item.id} bottomDivider>
+				<ListItem bottomDivider onPress={() => console.log('cliclou')}>
 					<ListItem.Content>
 						<ListItem.Title>{item.title}</ListItem.Title>
+						<ListItem.Subtitle>
+							{item.synopsis.length > 35
+								? item.synopsis.slice(0, 35).concat('...')
+								: item.synopsis}
+						</ListItem.Subtitle>
 					</ListItem.Content>
 					<ListItem.Chevron />
 				</ListItem>

@@ -1,18 +1,28 @@
 import React from 'react';
 
 import { FlatList } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import { ListItem, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 
 // import { styles } from './style';
 
 function Books({ dataUser }) {
 	const renderBook = ({ item }) => {
-		if (!item.deleted)
+		if (item.deleted)
 			return (
-				<ListItem key={item.id} bottomDivider>
+				<ListItem bottomDivider onPress={() => console.log('cliclou')}>
+					<Icon
+						name='check'
+						type='feather'
+						color={item.read ? '#adff2f' : '#808080'}
+					/>
 					<ListItem.Content>
 						<ListItem.Title>{item.title}</ListItem.Title>
+						<ListItem.Subtitle>
+							{item.synopsis.length > 35
+								? item.synopsis.slice(0, 35).concat('...')
+								: item.synopsis}
+						</ListItem.Subtitle>
 					</ListItem.Content>
 					<ListItem.Chevron />
 				</ListItem>
