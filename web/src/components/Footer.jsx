@@ -9,14 +9,13 @@ function Footer() {
 				<div className='container'>
 					<div className='row'>
 						<div className='col l6 s12'>
-							<h5 className='white-text'>Footer Content</h5>
+							<h5 className='white-text'>Projeto Biblioteca</h5>
 							<p className='grey-text text-lighten-4'>
-								You can use rows and columns here to organize your
-								footer content.
+								PAM II - PW II | ETEC de Embu
 							</p>
 						</div>
 						<div className='col l4 offset-l2 s12'>
-							<h5 className='white-text'>Links</h5>
+							<h5 className='white-text'>Link</h5>
 							<ul>
 								<li>
 									<a className='grey-text text-lighten-3' href='#!'>
@@ -44,10 +43,7 @@ function Footer() {
 				</div>
 				<div className='footer-copyright'>
 					<div className='container'>
-						© 2014 Copyright Text
-						<a className='grey-text text-lighten-4 right' href='#!'>
-							More Links
-						</a>
+						<center>2020 - Equipe Ombro Amigo ©</center>
 					</div>
 				</div>
 			</footer>
