@@ -3,13 +3,17 @@ import './style.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
+import imagem from '../../assets/img/logo.png';
 
 function NavBar({ successSignOut }) {
 	return (
-		<nav className="navBg">
+		<nav className='navBg'>
 			<div className='nav-wrapper'>
 				<Link to='/home' className='brand-logo'>
-					Logo
+					<div className='teste'>
+						<img src={imagem} className="img" alt="Logo"/>
+						My Personal Lib
+					</div>
 				</Link>
 				<ul id='nav-mobile' className='right hide-on-med-and-down'>
 					<li>
