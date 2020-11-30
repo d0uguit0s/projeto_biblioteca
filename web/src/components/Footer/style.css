@@ -1,0 +1,27 @@
+.page-footer{
+	background-color: rgb(31, 165, 102);
+}
+
+.container, .containera{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.white-text{
+    text-align: center;
+    align-items: center;
+}
+
+.card-content{
+    color: white;
+}
+
+.containera{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-link{
+    text-decoration: underline;
+}
