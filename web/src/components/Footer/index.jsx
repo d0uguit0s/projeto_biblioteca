@@ -13,7 +13,7 @@ function Footer() {
 						<p className='grey-text text-lighten-4'>
 								PAM II - PW III | ETEC de Embu
 						</p>
-						<a className='white-text text-link' href='https://github.com/douglassilvaa/projeto_biblioteca'>Repositório GitHub</a>
+						<a className='white-text text-link' href='https://github.com/douglassilvaa/projeto_biblioteca' target='blank'>Repositório GitHub</a>
 					</div>
 				</div>
 				<div className='footer-copyright'>
