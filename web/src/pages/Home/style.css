@@ -18,6 +18,7 @@
 
 .box-content{
 	width: 70%;
+	background-color: rgba(152,251,152,0.500);
 
 	display: flex;
 	flex-direction: column;
@@ -42,4 +43,13 @@
 
 .cardArea{
 	width: 90%;
+}
+
+.msg-user{
+	color:rgb(0, 111, 126);
+}
+
+.msg-user:hover{
+	font-weight: bold;
+	transform: scale(1.3);
 }
