@@ -9,6 +9,7 @@
 .boxForm {
 	/* display: flex; */
 	/* justify-content: center; */
+	background-color: #FFF;
 	width: 50%;
 	box-shadow: 1px 1px 5px #555;
 	border-radius: 15px;

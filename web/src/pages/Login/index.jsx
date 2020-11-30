@@ -15,7 +15,7 @@ function Login({ persistData }) {
 		e.preventDefault();
 
 		axios
-			.get(`http://192.168.2.4:3333/users`)
+			.get(`http://192.168.0.106:3333/users`)
 			.then(response => {
 				const results = response.data;
 				if (fieldEmail === '' || fieldPassword === '') {
@@ -41,53 +41,55 @@ function Login({ persistData }) {
 	}
 
 	return (
-		<ContainerForm>
-			<form className='col s12'>
-				<div className='inputArea'>
-					<div className='row'>
-						<div className='input-field col s12'>
-							<i className='material-icons prefix'>account_circle</i>
-							<input
-								id='email'
-								type='email'
-								className='validate'
-								value={fieldEmail}
-								onChange={e => setFieldEmail(e.target.value)}
-							/>
-							<label htmlFor='email'>Email</label>
+		<div className="bg">
+			<ContainerForm>
+				<form className='col s12 formArea'>
+					<div className='inputArea'>
+						<div className='row'>
+							<div className='input-field col s12'>
+								<i className='material-icons prefix'>account_circle</i>
+								<input
+									id='email'
+									type='email'
+									className='validate'
+									value={fieldEmail}
+									onChange={e => setFieldEmail(e.target.value)}
+								/>
+								<label htmlFor='email'>Email</label>
+							</div>
+						</div>
+						<div className='row'>
+							<div className='input-field col s12'>
+								<i className='material-icons prefix'>vpn_key</i>
+								<input
+									id='password'
+									type='password'
+									className='validate'
+									value={fieldPassword}
+									onChange={e => setFieldPassword(e.target.value)}
+								/>
+								<label htmlFor='password'>Password</label>
+							</div>
 						</div>
 					</div>
-					<div className='row'>
-						<div className='input-field col s12'>
-							<i className='material-icons prefix'>vpn_key</i>
-							<input
-								id='password'
-								type='password'
-								className='validate'
-								value={fieldPassword}
-								onChange={e => setFieldPassword(e.target.value)}
-							/>
-							<label htmlFor='password'>Password</label>
-						</div>
+					<div className='areaBtn'>
+						<button
+							className='customBtn btn waves-effect waves-light'
+							type='submit'
+							name='action'
+							onClick={handleSubmit}
+						>
+							Entrar
+							<i className='material-icons right'>lock_open</i>
+						</button>
 					</div>
-				</div>
-				<div className='areaBtn'>
-					<button
-						className='customBtn btn waves-effect waves-light'
-						type='submit'
-						name='action'
-						onClick={handleSubmit}
-					>
-						Entrar
-						<i className='material-icons right'>lock_open</i>
-					</button>
-				</div>
-				<div className='links'>
-					<Link to='/forgetPsw'>Esqueci minha senha</Link>
-					<Link to='/register'>Cadastre-se</Link>
-				</div>
-			</form>
-		</ContainerForm>
+					<div className='links'>
+						<Link to='/forgetPsw' className="linkStyle">Esqueci minha senha</Link>
+						<Link to='/register' className="linkStyle">Cadastre-se</Link>
+					</div>
+				</form>
+			</ContainerForm>
+		</div>
 	);
 }
 
