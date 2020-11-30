@@ -1,3 +1,7 @@
+.bg{
+	background-color: rgb(31, 165, 102);;
+}
+
 .areaBtn{
 	display: flex;
 	justify-content: center;
@@ -6,4 +10,9 @@
 
 .customBtn{
 	border-radius: 10px;
+	background-color: rgba(31, 165, 102, 0.850);
+}
+
+.customBtn:hover{
+	background-color: rgb(31, 165, 102);
 }

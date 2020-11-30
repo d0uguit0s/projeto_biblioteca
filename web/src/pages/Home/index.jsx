@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Card from '../../components/Card/index';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer/index';
 import ModalAddBook from '../../components/ModalAddBook/index';
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/NavBar/index';
 import './style.css';
 
 function Home({ dataUser }) {

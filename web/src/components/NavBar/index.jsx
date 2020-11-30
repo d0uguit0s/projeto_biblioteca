@@ -1,11 +1,12 @@
 import React from 'react';
+import './style.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Creators as saveDataUserActions } from '../store/ducks/dataUser';
+import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
 
 function NavBar({ successSignOut }) {
 	return (
-		<nav>
+		<nav className="navBg">
 			<div className='nav-wrapper'>
 				<Link to='/home' className='brand-logo'>
 					Logo
