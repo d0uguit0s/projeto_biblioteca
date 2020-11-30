@@ -11,7 +11,8 @@ function Home({ dataUser }) {
 		<>
 			<NavBar />
 			<div className='titleArea'>
-				<h1>{`Olá, ${dataUser.name}!`}</h1>
+				<h1 className='msg-user'>{`Olá, ${dataUser.name}!`}</h1>
+				<h8 className='msg-user'>Seja bem-vindo à sua biblioteca pessoal.</h8>
 			</div>
 			<div className='containerContent'>
 				<div className='box-content'>
