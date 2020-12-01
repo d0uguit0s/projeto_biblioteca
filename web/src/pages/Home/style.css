@@ -1,8 +1,8 @@
 .titleArea{
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
+	margin-bottom: 25px;
 }
 
 .containerContent{
@@ -50,6 +50,17 @@
 }
 
 .msg-user:hover{
+	-moz-transform: scale(1.1);
+	-moz-transition: 1s;
+	-moz-animation-timing-function: linear;
+
+	-webkit-transform:  scale(1.1);
+	-webkit-transition: 1s;
+	-webkit-animation-timing-function: linear;
+
+	-o-transform: scale(1.1);
+	-o-transition: 1s;
+	-o-animation-timing-function: linear;
+}.msg-user{
 	font-weight: bold;
-	transform: scale(1.3);
 }
