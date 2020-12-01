@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css';
 import { connect } from 'react-redux';
 import Card from '../../components/Card';
 import Footer from '../../components/Footer/index';
@@ -9,7 +10,7 @@ function Trash({ dataUser }) {
 		<>
 			<NavBar />
 			<div className='titleArea'>
-				<h1>{`Olá ${dataUser.name}!`}</h1>
+				<h3 className="titleTrash">Estes são os livros que você excluiu</h3>
 			</div>
 			<div className='containerContent'>
 				<div className='box-content'>
