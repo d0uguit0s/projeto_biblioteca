@@ -7,6 +7,10 @@ import StackBooks from './StackBooks';
 import StackOptions from './StackOptions';
 import StackTrash from './StackTrash';
 
+const teste = {
+	backgroundColor:  '#98fb9880',
+}
+
 function PrivateRoutes() {
 	const PrivateTab = createBottomTabNavigator();
 	return (
@@ -39,8 +43,8 @@ function PrivateRoutes() {
 				},
 			})}
 			tabBarOptions={{
-				activeTintColor: '#9C27B0',
-				inactiveTintColor: '#777',
+				activeTintColor: '#1fa566',
+				activeBackgroundColor: '#98fb9880',
 			}}
 		>
 			<PrivateTab.Screen name='Livros' component={StackBooks} />
