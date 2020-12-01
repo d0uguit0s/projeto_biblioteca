@@ -7,67 +7,263 @@
       "password": "123456",
       "books": [
         {
-          "title": "Livro teste",
-          "synopsis": "Apenas um livro de teste",
+          "title": "A Guerra dos Tronos",
+          "synopsis": "A Game of Thrones é o primeiro livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra.",
           "read": true,
           "deleted": false,
           "id": 0
         },
         {
-          "title": "Teste ativo",
-          "synopsis": "testando ativo",
+          "title": "A Fúria dos Reis",
+          "synopsis": "A Clash of Kings é o segundo livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra. Foi publicado pela primeira vez em 16 de novembro de 1998 no Reino Unido, sendo lançado nos Estados Unidos em março de 1999.",
           "read": true,
           "deleted": true,
           "id": 1
         },
         {
-          "title": "Verificando",
-          "synopsis": "Livro de verificação",
+          "title": "A Tormenta de Espadas",
+          "synopsis": "A Storm of Swords é o terceiro livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra. Foi publicado pela primeira vez em 8 de agosto de 2000 no Reino Unido, sendo lançado nos Estados Unidos em novembro do mesmo ano.",
           "read": true,
           "deleted": false,
           "id": 2
         },
         {
-          "title": "Teste novo",
-          "synopsis": "Testando novo modal",
+          "title": "O Festim dos Corvos",
+          "synopsis": "Festim dos Corvos é o quarto livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra. Foi lançado em 17 de outubro de 2005 na Grã-Bretanha e em 8 de novembro do mesmo ano nos Estados Unidos.",
           "read": true,
           "deleted": false,
           "id": 3
         },
         {
-          "title": "zoado",
-          "synopsis": "Livro zoado",
+          "title": "A Dança dos Dragões",
+          "synopsis": "A Dance with Dragons é o quinto livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra. Foi publicado pela primeira vez em 12 de julho de 2011 nos Estados Unidos.",
           "read": false,
           "deleted": true,
           "id": 4
         },
         {
-          "title": "Livro teste",
-          "synopsis": "Um livro apenas para teste",
+          "title": "The Winds of Winter",
+          "synopsis": "The Winds of Winter será o sexto livro da série de fantasia épica As Crônicas de Gelo e Fogo, escrita pelo norte-americano George R. R. Martin e publicada pela editora Bantam Spectra. Seu enredo se passa após os dois livros paralelos da saga, A Feast for Crows e A Dance with Dragons.",
           "read": true,
           "deleted": true,
           "id": 5
         },
         {
-          "title": "Pra Ver no Moblie",
-          "synopsis": "teste de livro",
+          "title": "A Dream of Spring",
+          "synopsis": "Sem sinopse ainda",
           "read": true,
           "deleted": false,
           "id": 6
         },
         {
-          "title": "Livro para testes finais",
-          "synopsis": "Apenas um livro pra realizar testes finais",
+          "title": "Cidades de papel",
+          "synopsis": "Cidades de Papel é o terceiro romance escrito por John Green, publicado em 16 de outubro de 2008 pela Dutton Books. No Brasil, a obra foi publicada pela Editora Intrínseca em 2013. O romance explora a vinda de idade e de busca do protagonista.",
           "read": false,
           "deleted": false,
           "id": 7
         },
         {
-          "title": "uykjhkjh",
-          "synopsis": "yiuyiuyiuh",
+          "title": "Cipreste Triste",
+          "synopsis": "Sad Cypress é um romance policial de Agatha Christie, publicado em 1940. É um caso do detetive belga Hercule Poirot.",
           "read": true,
           "deleted": false,
           "id": 8
+        },
+        {
+          "title": "A revolução dos bichos",
+          "synopsis": "Animal Farm é um romance satírico do escritor inglês George Orwell, publicado no Reino Unido em 17 de agosto de 1945 e incluído pela revista americana Time na Lista dos 100 melhores romances da língua inglesa.",
+          "read": true,
+          "deleted": false,
+          "id": 9
+        },
+        {
+          "title": "O Pequeno Príncipe",
+          "synopsis": "Le Petit Prince, também conhecido como O Principezinho ou O Pequeno Príncipe é uma obra do escritor, ilustrador e aviador francês Antoine de Saint-Exupéry, publicada em 1943 nos Estados Unidos. Durante a Segunda Guerra Mundial, Saint-Exupéry foi exilado para a América do Norte.",
+          "read": false,
+          "deleted": true,
+          "id": 10
+        },
+        {
+          "title": "Depois de Você",
+          "synopsis": "Com mais de 5 milhões de exemplares vendidos em todo o mundo, Como eu era antes de você conta a história do relacionamento entre Will Traynor e Louisa Clark, cujo fim trágico deixou de coração apertado os milhares de fãs da autora Jojo Moyes. Em Depois de você, Lou ainda não superou a perda de Will.",
+          "read": true,
+          "deleted": false,
+          "id": 11
+        },
+        {
+          "title": "O Senhor dos Anéis",
+          "synopsis": "O Senhor dos Anéis é um livro de alta fantasia, escrito pelo escritor britânico J. R. R. Tolkien. Escrita entre 1937 e 1949, com muitas partes criadas durante a Segunda Guerra Mundial, a saga é uma continuação de O Hobbit.",
+          "read": false,
+          "deleted": true,
+          "id": 12
+        },
+        {
+          "title": "A Culpa É das Estrelas",
+          "synopsis": "A Culpa É das Estrelas é o sexto romance de John Green, publicado em janeiro de 2012.",
+          "read": true,
+          "deleted": false,
+          "id": 13
+        },
+        {
+          "title": "O Hobbit",
+          "synopsis": "The Hobbit, or There and Back Again é um livro infantojuvenil de alta fantasia escrito pelo filólogo e professor britânico J. R. R. Tolkien.",
+          "read": true,
+          "deleted": false,
+          "id": 14
+        },
+        {
+          "title": "A Menina que Roubava Livros",
+          "synopsis": "The Book Thief é um drama do escritor australiano Markus Zusak, publicado em 2005 pela editora Picador. No Brasil e em Portugal, foi lançado pela Intrínseca e a Presença, respectivamente. O livro é sobre Liesel Meminger, uma garota que encontra a Morte três vezes durante 1939–43 na Alemanha nazista.",
+          "read": true,
+          "deleted": false,
+          "id": 15
+        },
+        {
+          "title": "As Viagens de Gulliver",
+          "synopsis": "As Viagens de Gulliver, originalmente Viagens a diversos países remotos do mundo, em quatro partes, por Lemuel Gulliver, a princípio cirurgião e mais tarde capitão de vários navios, é um romance satírico do escritor irlandês Jonathan Swift.",
+          "read": true,
+          "deleted": false,
+          "id": 16
+        },
+        {
+          "title": "O Mundo de Sofia",
+          "synopsis": "O Mundo de Sofia é um romance escrito por Jostein Gaarder, publicado em 1991. O livro foi escrito originalmente em norueguês, mas já foi traduzido para mais de 60 línguas, teve sua primeira edição em português em 1995, que atualmente encontra-se em sua 32ª reimpressão.",
+          "read": true,
+          "deleted": false,
+          "id": 17
+        },
+        {
+          "title": "Diário de Anne Frank",
+          "synopsis": "O Diário de Anne Frank é um livro escrito por Anne Frank entre 12 de junho de 1942 e 1.º de agosto de 1944 durante a Segunda Guerra Mundial. É conhecido por narrar momentos vivenciados pelo grupo de judeus confinados em um esconderijo durante a ocupação nazista dos Países Baixos.",
+          "read": true,
+          "deleted": false,
+          "id": 18
+        },
+        {
+          "title": "Uma dobra no tempo",
+          "synopsis": "Há mais de 50 anos, as palavras de Madeleine L’Engle encantam gerações de leitores e inspiram escritores a quebrarem as barreiras terrestres para explorar novos mundos.",
+          "read": true,
+          "deleted": false,
+          "id": 19
+        },
+        {
+          "title": "The Shining",
+          "synopsis": "The Shining é um romance de horror do escritor estadunidense Stephen King. Lançado em 1977, foi o terceiro livro de Stephen King e seu primeiro best-seller em capa-dura. O sucesso do livro foi tanto que firmou King na carreira de escritor no gênero.",
+          "read": true,
+          "deleted": false,
+          "id": 20
+        },
+        {
+          "title": "A sutil arte de ligar o f*da-se",
+          "synopsis": "Chega de tentar buscar um sucesso que só existe na sua cabeça. Chega de se torturar para pensar positivo enquanto sua vida vai ladeira abaixo. Chega de se sentir inferior por não ver o lado bom de estar no fundo do poço.",
+          "read": true,
+          "deleted": false,
+          "id": 21
+        },
+        {
+          "title": "The Testaments",
+          "synopsis": "The Testaments é um romance distópico de Margaret Atwood de 2019. É uma continuação de The Handmaid's Tale. O romance é escrito 15 anos depois dos acontecimentos de The Handmaid's Tale.",
+          "read": true,
+          "deleted": false,
+          "id": 22
+        },
+        {
+          "title": "It - A Coisa",
+          "synopsis": "It é um romance de terror de 1986 do autor estadunidense Stephen King. Foi seu 22º livro e seu 17º romance escrito em seu próprio nome. A história segue as experiências de sete crianças, que são aterrorizadas por uma entidade maligna que explora os medos de suas vítimas para se disfarçar enquanto caçam suas presas.",
+          "read": true,
+          "deleted": false,
+          "id": 23
+        },
+        {
+          "title": "Território Lovecraft (Lovecraft Country)",
+          "synopsis": "Uma jornada fantástica e assustadora, adaptada para virar série na HBO com produção do diretor de Corra!, Jordan Peele, e J.J. Abrams  Nos Estados Unidos segregados da década de 1950, Atticus é um rapaz negro, veterano da Guerra da Coreia, fã de H. P. Lovecraft e outros escritores de pulp fiction.",
+          "read": true,
+          "deleted": false,
+          "id": 24
+        },
+        {
+          "title": "Harry Potter e a Pedra Filosofal",
+          "synopsis": "Harry Potter e a Pedra Filosofal é o primeiro dos sete livros da série de fantasia Harry Potter, escrita por J. K. Rowling. O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo.",
+          "read": true,
+          "deleted": false,
+          "id": 25
+        },
+        {
+          "title": "Harry Potter E A Câmara Secreta (capa Dura) – Edição Comemorativa dos 20 anos da Coleção Harry Potter",
+          "synopsis": "Harry Potter and the Chamber of Secrets é um romance de fantasia escrito pela britânica J. K. Rowling. É o segundo livro da série Harry Potter.",
+          "read": true,
+          "deleted": false,
+          "id": 26
+        },
+        {
+          "title": "Harry Potter e o Prisioneiro de Azkaban",
+          "synopsis": "Harry Potter e o Prisioneiro de Azkaban é o terceiro livro dos sete volumes da série de fantasia Harry Potter, tanto em termos cronológicos como em ordem de publicação, da autora inglesa J. K. Rowling. Foi primeiramente publicado no Reino Unido pela editora londrina Bloomsbury em 1999.",
+          "read": true,
+          "deleted": false,
+          "id": 27
+        },
+        {
+          "title": "Harry Potter e o Cálice de Fogo",
+          "synopsis": "Harry Potter e o Cálice de Fogo é o quarto livro dos sete volumes da série de fantasia Harry Potter, tanto em termos cronológicos como em ordem de publicação, da autora inglesa J. K. Rowling. Foi primeiramente publicado no Reino Unido e nos Estados Unidos em 2000.",
+          "read": true,
+          "deleted": false,
+          "id": 28
+        },
+        {
+          "title": "Harry Potter e a Ordem da Fênix",
+          "synopsis": "Harry Potter and the Order of the Phoenix é o quinto livro dos sete volumes da série de fantasia Harry Potter, tanto em termos cronológicos como em ordem de publicação, da autora inglesa J. K. Rowling.",
+          "read": true,
+          "deleted": false,
+          "id": 29
+        },
+        {
+          "title": "Harry Potter e o Enigma do Príncipe",
+          "synopsis": "Harry Potter and the Half-Blood Prince é um romance de fantasia escrito pela britânica J. K. Rowling, sendo o sexto dos sete volumes da série Harry Potter.",
+          "read": true,
+          "deleted": false,
+          "id": 30
+        },
+        {
+          "title": "Harry Potter e as Relíquias da Morte",
+          "synopsis": "Harry Potter and the Deathly Hallows é um romance de fantasia escrito pela britânica J. K. Rowling. É o sétimo e último livro da série Harry Potter.",
+          "read": true,
+          "deleted": false,
+          "id": 31
+        },
+        {
+          "title": "O Ladrão de Raios",
+          "synopsis": "The Lightning Thief é um livro juvenil de fantasia e aventura baseado na mitologia grega, escrito por Rick Riordan. É o primeiro livro da série norte-americana Percy Jackson & the Olympians, que narra a vida do adolescente Percy Jackson que descobre ser um semideus, filho de Poseidon com uma humana.",
+          "read": true,
+          "deleted": false,
+          "id": 32
+        },
+        {
+          "title": "O Mar de Monstros",
+          "synopsis": "The Sea of Monsters é um livro de aventura e fantasia baseado em mitologia grega. É o segundo da saga Percy Jackson & os Olimpianos, de Rick Riordan.",
+          "read": true,
+          "deleted": false,
+          "id": 33
+        },
+        {
+          "title": "A Maldição do Titã",
+          "synopsis": "The Titan's Curse é o um livro estadunidense de fantasia e aventura lançado em 2007 e escrito por Rick Riordan. É o terceiro livro da série Percy Jackson & the Olympians.",
+          "read": true,
+          "deleted": false,
+          "id": 34
+        },
+        {
+          "title": "A Batalha do Labirinto",
+          "synopsis": "The Battle of the Labyrinth é o quarto livro da série Percy Jackson e Os Olimpianos, de Rick Riordan. O Livro narra as aventuras de Percy Jackson e seus amigos na tentativa de defender seu Acampamento de uma invasão do exército de Cronos, através do Labirinto de Dédalo.",
+          "read": true,
+          "deleted": false,
+          "id": 35
+        },
+        {
+          "title": "O Último Olimpiano",
+          "synopsis": "The Last Olimpian é um romance de fantasia e aventura baseado na mitologia grega de Rick Riordan, publicado em 5 de maio de 2009. É o quinto e último livro da série Percy Jackson e os Olimpianos e é sequência direta de A Batalha do Labirinto.",
+          "read": true,
+          "deleted": false,
+          "id": 36
         }
       ],
       "id": 1

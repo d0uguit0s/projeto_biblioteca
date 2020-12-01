@@ -8,15 +8,16 @@ import StackOptions from './StackOptions';
 import StackTrash from './StackTrash';
 
 const teste = {
-	backgroundColor:  '#98fb9880',
-}
+	backgroundColor: '#98fb9880',
+};
 
 function PrivateRoutes() {
 	const PrivateTab = createBottomTabNavigator();
 	return (
 		<PrivateTab.Navigator
+			initialRouteName='Livros'
 			screenOptions={({ route }) => ({
-				tabBarIcon: ({ color, size }) => {
+				tabBarIcon: ({ color }) => {
 					let iconName;
 					let iconType;
 
