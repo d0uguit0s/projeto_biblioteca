@@ -19,7 +19,7 @@ function Login({ persistData }) {
 
 		axios
 			// .get('http://10.0.2.2:3333/users') // Funciona apenas no emulador
-			.get('http://192.168.0.106:3333/users') // Funciona para rodar no expo em cel fisico (tem que mudar o ip para cada pc)
+			.get('http://192.168.2.4:3333/users') // Funciona para rodar no expo em cel fisico (tem que mudar o ip para cada pc)
 			.then(response => {
 				console.log('foi');
 				setLoading(false);
@@ -78,10 +78,8 @@ function Login({ persistData }) {
 					buttonStyle={styles.btn}
 					loading={loading}
 					onPress={handleSubmit}
-
 				/>
 			</View>
-
 		</View>
 	);
 }

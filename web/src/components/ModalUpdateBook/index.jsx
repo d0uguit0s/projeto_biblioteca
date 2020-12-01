@@ -28,7 +28,7 @@ function ModalUpdateBook({ book, booksState, idUser, updateBook }) {
 			);
 
 			axios
-				.patch(`http://192.168.0.106:3333/users/${idUser}`, {
+				.patch(`http://192.168.2.4:3333/users/${idUser}`, {
 					books: newBooks,
 				})
 				.then(() => {
@@ -79,7 +79,7 @@ function ModalUpdateBook({ book, booksState, idUser, updateBook }) {
 					<i className='material-icons btn_edit'>create</i>
 				</a>
 			}
-			className="modalStyle"
+			className='modalStyle'
 		>
 			<form className='col s12'>
 				<div className='row'>

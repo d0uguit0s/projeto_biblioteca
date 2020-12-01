@@ -3,6 +3,7 @@ import React from 'react';
 import { FlatList, View } from 'react-native';
 import { ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
+
 import { styles } from './style';
 
 // import { styles } from './style';
@@ -12,12 +13,11 @@ function Trash({ dataUser }) {
 		if (item.deleted)
 			return (
 				<View style={styles.container}>
-					<ListItem
-						bottomDivider
-						containerStyle={styles.item}
-					>
+					<ListItem bottomDivider containerStyle={styles.item}>
 						<ListItem.Content>
-							<ListItem.Title style={styles.bookTitle}>{item.title}</ListItem.Title>
+							<ListItem.Title style={styles.bookTitle}>
+								{item.title}
+							</ListItem.Title>
 							<ListItem.Subtitle style={styles.bookSubtitle}>
 								{item.synopsis.length > 35
 									? item.synopsis.slice(0, 35).concat('...')

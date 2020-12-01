@@ -16,7 +16,7 @@ function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
 		);
 
 		axios
-			.patch(`http://localhost:3333/users/${idUser}`, { books: newBooks })
+			.patch(`http://192.168.2.4:3333/users/${idUser}`, { books: newBooks })
 			.then(() => {})
 			.catch(error => alert(error));
 	}
@@ -38,10 +38,10 @@ function Card({ book, deleteBook, changeStatusBook, idUser, booksState }) {
 
 	return (
 		<div className='col s12 m6'>
-			<div className="card styleCard">
+			<div className='card styleCard'>
 				<div className='card-content'>
 					<h1 className='title'>{book.title}</h1>
-					<p className="bookSynopsis">{book.synopsis}</p>
+					<p className='bookSynopsis'>{book.synopsis}</p>
 				</div>
 				{!book.deleted && (
 					<div className='card-action fotter-card'>

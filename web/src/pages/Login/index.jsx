@@ -15,7 +15,7 @@ function Login({ persistData }) {
 		e.preventDefault();
 
 		axios
-			.get(`http://192.168.0.106:3333/users`)
+			.get(`http://192.168.2.4:3333/users`)
 			.then(response => {
 				const results = response.data;
 				if (fieldEmail === '' || fieldPassword === '') {
@@ -41,7 +41,7 @@ function Login({ persistData }) {
 	}
 
 	return (
-		<div className="bg">
+		<div className='bg'>
 			<ContainerForm>
 				<form className='col s12 formArea'>
 					<div className='inputArea'>
@@ -84,8 +84,12 @@ function Login({ persistData }) {
 						</button>
 					</div>
 					<div className='links'>
-						<Link to='/forgetPsw' className="linkStyle">Esqueci minha senha</Link>
-						<Link to='/register' className="linkStyle">Cadastre-se</Link>
+						<Link to='/forgetPsw' className='linkStyle'>
+							Esqueci minha senha
+						</Link>
+						<Link to='/register' className='linkStyle'>
+							Cadastre-se
+						</Link>
 					</div>
 				</form>
 			</ContainerForm>

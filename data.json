@@ -54,6 +54,20 @@
           "read": true,
           "deleted": false,
           "id": 6
+        },
+        {
+          "title": "Livro para testes finais",
+          "synopsis": "Apenas um livro pra realizar testes finais",
+          "read": false,
+          "deleted": false,
+          "id": 7
+        },
+        {
+          "title": "uykjhkjh",
+          "synopsis": "yiuyiuyiuh",
+          "read": true,
+          "deleted": false,
+          "id": 8
         }
       ],
       "id": 1

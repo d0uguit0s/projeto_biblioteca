@@ -64,7 +64,7 @@ function Register() {
 
 		if (!errorField) {
 			axios
-				.post('http://192.168.0.106:3333/users', data)
+				.post('http://192.168.2.4:3333/users', data)
 				.then(() => {
 					alert('Usuário criado com sucesso!');
 					history.push('/loading');
@@ -77,7 +77,7 @@ function Register() {
 	}
 
 	return (
-		<div className="bg">
+		<div className='bg'>
 			<ContainerForm>
 				<div className='row'>
 					<form className='col s12'>
@@ -154,10 +154,14 @@ function Register() {
 									type='password'
 									className={validationConfirmPsw}
 									value={fieldConfirmPassword}
-									onChange={e => setFieldConfirmPassword(e.target.value)}
+									onChange={e =>
+										setFieldConfirmPassword(e.target.value)
+									}
 									onKeyUp={() => validatePsw()}
 								/>
-								<label htmlFor='confirmPassword'>Confirme a senha</label>
+								<label htmlFor='confirmPassword'>
+									Confirme a senha
+								</label>
 								<span
 									className='helper-text'
 									data-error='As senhas não são iguais'

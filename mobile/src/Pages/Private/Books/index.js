@@ -7,14 +7,20 @@ import { connect } from 'react-redux';
 import { styles } from './style';
 
 function Books({ dataUser, navigation }) {
+	const [stylePress, setStylePress] = useState(styles.itemOut);
+
 	const renderBook = ({ item }) => {
-		if (item.deleted)
+		if (!item.deleted)
 			return (
 				<View style={styles.container}>
 					<ListItem
 						bottomDivider
-						onPress={() => navigation.navigate('Detalhes', { book: item })}
-						containerStyle={styles.item}
+						onPress={() =>
+							navigation.navigate('Detalhes', { book: item })
+						}
+						onPressIn={() => setStylePress(styles.itemIn)}
+						onPressOut={() => setStylePress(styles.itemOut)}
+						containerStyle={stylePress}
 					>
 						<Icon
 							name='check'
@@ -22,14 +28,16 @@ function Books({ dataUser, navigation }) {
 							color={item.read ? '#00AD5C' : '#FFF'}
 						/>
 						<ListItem.Content>
-							<ListItem.Title style={styles.bookTitle}>{item.title}</ListItem.Title>
+							<ListItem.Title style={styles.bookTitle}>
+								{item.title}
+							</ListItem.Title>
 							<ListItem.Subtitle style={styles.bookSubtitle}>
 								{item.synopsis.length > 35
 									? item.synopsis.slice(0, 35).concat('...')
 									: item.synopsis}
 							</ListItem.Subtitle>
 						</ListItem.Content>
-						<ListItem.Chevron />
+						<ListItem.Chevron color='#0299ad' />
 					</ListItem>
 				</View>
 			);
