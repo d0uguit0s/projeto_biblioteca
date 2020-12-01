@@ -10,7 +10,7 @@ function DetailsBook({ route }) {
 	const { book } = route.params;
 	return (
 		<ScrollView style={styles.container}>
-			<Card style={styles.card}>
+			<Card containerStyle={styles.card}>
 				<Card.Title style={styles.title}>
 					{book.title.toUpperCase()}
 				</Card.Title>
