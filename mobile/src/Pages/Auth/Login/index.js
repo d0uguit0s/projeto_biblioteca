@@ -19,7 +19,7 @@ function Login({ persistData }) {
 
 		axios
 			// .get('http://10.0.2.2:3333/users') // Funciona apenas no emulador
-			.get('http://192.168.2.4:3333/users') // Funciona para rodar no expo em cel fisico (tem que mudar o ip para cada pc)
+			.get('http://192.168.0.106:3333/users') // Funciona para rodar no expo em cel fisico (tem que mudar o ip para cada pc)
 			.then(response => {
 				console.log('foi');
 				setLoading(false);
@@ -46,38 +46,42 @@ function Login({ persistData }) {
 
 	return (
 		<View style={styles.container}>
-			<Input
-				label='E-mail'
-				placeholder='email@exemplo.com'
-				leftIcon={<Icon name='envelope-o' size={24} color='black' />}
-				leftIconContainerStyle={styles.iconInput}
-				// errorStyle={{ color: 'red' }}
-				// errorMessage='ENTER A VALID ERROR HERE'
-				value={fieldEmail}
-				onChangeText={value => setFieldEmail(value)}
-			/>
+			<View style={styles.form}>
+				<Input
+					label='E-mail'
+					placeholder='email@exemplo.com'
+					leftIcon={<Icon name='envelope-o' size={24} color='black' />}
+					leftIconContainerStyle={styles.iconInput}
+					// errorStyle={{ color: 'red' }}
+					// errorMessage='ENTER A VALID ERROR HERE'
+					value={fieldEmail}
+					onChangeText={value => setFieldEmail(value)}
+				/>
 
-			<Input
-				secureTextEntry
-				label='Senha'
-				placeholder='senhaExemplo@123'
-				leftIcon={<Icon name='lock' size={24} color='black' />}
-				leftIconContainerStyle={styles.iconInput}
-				// errorStyle={{ color: 'red' }}
-				// errorMessage='ENTER A VALID ERROR HERE'
-				value={fieldPassword}
-				onChangeText={value => setFieldPassword(value)}
-			/>
+				<Input
+					secureTextEntry
+					label='Senha'
+					placeholder='senhaExemplo@123'
+					leftIcon={<Icon name='lock' size={24} color='black' />}
+					leftIconContainerStyle={styles.iconInput}
+					// errorStyle={{ color: 'red' }}
+					// errorMessage='ENTER A VALID ERROR HERE'
+					value={fieldPassword}
+					onChangeText={value => setFieldPassword(value)}
+				/>
 
-			<Button
-				icon={<Icon name='long-arrow-right' size={20} color='white' />}
-				iconRight
-				title='Entrar'
-				titleStyle={styles.titleBtn}
-				buttonStyle={styles.btn}
-				loading={loading}
-				onPress={handleSubmit}
-			/>
+				<Button
+					icon={<Icon name='long-arrow-right' size={20} color='white' />}
+					iconRight
+					title='Entrar'
+					titleStyle={styles.titleBtn}
+					buttonStyle={styles.btn}
+					loading={loading}
+					onPress={handleSubmit}
+
+				/>
+			</View>
+
 		</View>
 	);
 }

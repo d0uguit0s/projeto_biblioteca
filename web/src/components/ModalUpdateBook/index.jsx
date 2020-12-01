@@ -28,7 +28,7 @@ function ModalUpdateBook({ book, booksState, idUser, updateBook }) {
 			);
 
 			axios
-				.patch(`http://192.168.2.4:3333/users/${idUser}`, {
+				.patch(`http://192.168.0.106:3333/users/${idUser}`, {
 					books: newBooks,
 				})
 				.then(() => {
