@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { FlatList, View } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 import { styles } from './style';
 
 function Books({ dataUser, navigation }) {
-	const [stylePress, setStylePress] = useState(styles.itemOut);
-
 	const renderBook = ({ item }) => {
 		if (!item.deleted)
 			return (
@@ -18,9 +16,7 @@ function Books({ dataUser, navigation }) {
 						onPress={() =>
 							navigation.navigate('Detalhes', { book: item })
 						}
-						onPressIn={() => setStylePress(styles.itemIn)}
-						onPressOut={() => setStylePress(styles.itemOut)}
-						containerStyle={stylePress}
+						containerStyle={styles.item}
 					>
 						<Icon
 							name='check'

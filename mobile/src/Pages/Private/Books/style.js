@@ -10,11 +10,7 @@ const styles = StyleSheet.create({
 	container: {
 		marginTop: 10,
 	},
-	itemIn: {
-		backgroundColor: '#04674663',
-		borderRadius: 15,
-	},
-	itemOut: {
+	item: {
 		backgroundColor: '#0ebd8263',
 		borderRadius: 15,
 	},
