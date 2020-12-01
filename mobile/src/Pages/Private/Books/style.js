@@ -14,6 +14,15 @@ const styles = StyleSheet.create({
 		backgroundColor: '#0ebd8263',
 		borderRadius: 15,
 	},
+	bookTitle: {
+		color: '#0299ad',
+		fontSize: 20,
+		fontWeight: 'bold',
+	},
+	bookSubtitle: {
+		color: '#000',
+		fontSize: 15,
+	},
 });
 
 export { styles };

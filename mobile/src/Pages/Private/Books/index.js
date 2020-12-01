@@ -19,11 +19,11 @@ function Books({ dataUser, navigation }) {
 						<Icon
 							name='check'
 							type='feather'
-							color={item.read ? '#adff2f' : '#808080'}
+							color={item.read ? '#00AD5C' : '#FFF'}
 						/>
 						<ListItem.Content>
-							<ListItem.Title>{item.title}</ListItem.Title>
-							<ListItem.Subtitle>
+							<ListItem.Title style={styles.bookTitle}>{item.title}</ListItem.Title>
+							<ListItem.Subtitle style={styles.bookSubtitle}>
 								{item.synopsis.length > 35
 									? item.synopsis.slice(0, 35).concat('...')
 									: item.synopsis}
