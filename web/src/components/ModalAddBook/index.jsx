@@ -76,13 +76,14 @@ function ModalAddBook({ idUser, booksState, addBook }) {
 			}}
 			//   root={[object HTMLBodyElement]}
 			trigger={
-				<Button large node='button'>
+				<Button large node='button' className="btn">
 					<i className='material-icons left'>library_add</i>Adicionar um
 					livro
 				</Button>
 			}
+			className="modalStyle"
 		>
-			<form className='col s12'>
+			<form className='col s12 oi'>
 				<div className='row'>
 					<div className='input-field col s12'>
 						<i className='material-icons prefix'>book</i>

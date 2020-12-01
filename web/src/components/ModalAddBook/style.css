@@ -1,10 +1,26 @@
 .modal{
 	z-index: 99;
 }
+
+.modalStyle{
+	border-radius: 20px;
+}
+
 .hide{
 	display: none;
 }
 
 .show{
 	display: block;
+}
+
+.btn{
+	align-self: flex-end;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	background-color: rgba(31, 165, 102, 0.700);
+}
+
+.btn:hover{
+	background-color: rgba(31, 165, 102);
 }
