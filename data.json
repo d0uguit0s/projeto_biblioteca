@@ -47,6 +47,13 @@
           "read": true,
           "deleted": true,
           "id": 5
+        },
+        {
+          "title": "Pra Ver no Moblie",
+          "synopsis": "teste de livro",
+          "read": true,
+          "deleted": false,
+          "id": 6
         }
       ],
       "id": 1
