@@ -5,8 +5,7 @@ import { ListItem, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 
 import { Creators as saveDataUserActions } from '../../../store/ducks/dataUser';
-
-// import { styles } from './style';
+import { styles } from './style';
 
 function Options({ successSignOut }) {
 	const list = [
@@ -15,7 +14,7 @@ function Options({ successSignOut }) {
 			icon: {
 				name: 'logout',
 				type: 'material-community',
-				color: '#000',
+				color: '#0299ad',
 			},
 			id: 1,
 		},
@@ -23,14 +22,19 @@ function Options({ successSignOut }) {
 	return (
 		<View>
 			{list.map(item => (
-				<ListItem key={item.id} bottomDivider onPress={successSignOut}>
+				<ListItem
+					key={item.id}
+					bottomDivider
+					onPress={successSignOut}
+					containerStyle={styles.item}
+				>
 					<Icon
 						name={item.icon.name}
 						type={item.icon.type}
 						color={item.icon.color}
 					/>
 					<ListItem.Content>
-						<ListItem.Title>{item.title}</ListItem.Title>
+						<ListItem.Title style={styles.title}>{item.title}</ListItem.Title>
 					</ListItem.Content>
 				</ListItem>
 			))}

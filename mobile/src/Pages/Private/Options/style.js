@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
+	item: {
+		backgroundColor: '#0ebd8263',
+	},
+	title: {
+		color: '#0299ad',
+	},
 });
 
 export { styles };
