@@ -24,6 +24,7 @@ function Register() {
 		lastName: fieldLastName,
 		email: fieldEmail,
 		password: fieldPassword,
+		books: [],
 	};
 
 	function validateName() {

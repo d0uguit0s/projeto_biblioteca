@@ -279,8 +279,8 @@
     {
       "name": "Natan",
       "lastName": "Silva",
-      "email": "natan@mail.com",
-      "password": "123456",
+      "email": "natan1@mail.com",
+      "password": "1234567",
       "books": [],
       "id": 3
     },
@@ -291,6 +291,36 @@
       "password": "leticia123",
       "books": [],
       "id": 4
+    },
+    {
+      "name": "Natan",
+      "lastName": "Abreu",
+      "email": "natan@mail.com",
+      "password": "123456",
+      "books": [
+        {
+          "title": "O Capital",
+          "synopsis": "O Capital é um conjunto de livros de Karl Marx que constituem uma análise do capitalismo. Muitos consideram esta obra o marco do pensamento socialista marxista",
+          "read": true,
+          "deleted": false,
+          "id": 0
+        },
+        {
+          "title": "Ideias Que Rimam Mais Que Palavras",
+          "synopsis": "“Ideias que rimam mais que palavras - Vol.1” é o primeiro livro de Rashid, rapper paulistano que cultiva desde a infância o gosto pela leitura e pelo universo literário. Como rimador, é referência de lírica e traz isso, agora, em novo formato, fazendo crônicas de suas músicas enquanto relembra momentos marcantes da carreira. Rashid narra partes de sua trajetória musical, indo dos dias mais precários até os mais expressivos, ao dar detalhes das composições e daquilo que o inspirou a fazer os versos que o tornaram consagrado.",
+          "read": false,
+          "deleted": false,
+          "id": 1
+        },
+        {
+          "title": "Clean Code",
+          "synopsis": "Mesmo um código ruim pode funcionar. Mas se ele não for limpo, pode acabar com uma empresa de desenvolvimento. Perdem-se a cada ano horas incontáveis e recursos importantes devido a um código mal escrito. Mas não precisa ser assim.",
+          "read": false,
+          "deleted": true,
+          "id": 2
+        }
+      ],
+      "id": 5
     }
   ]
 }

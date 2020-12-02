@@ -35,6 +35,7 @@ function ModalAddBook({ idUser, booksState, addBook }) {
 				.then(() => {
 					setFieldTitle('');
 					setFieldSynopsis('');
+					setFieldRead(false);
 				})
 				.catch(error => alert(error));
 		}

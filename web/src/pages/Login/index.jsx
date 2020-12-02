@@ -7,8 +7,8 @@ import './style.css';
 import { Creators as saveDataUserActions } from '../../store/ducks/dataUser';
 
 function Login({ persistData }) {
-	const [fieldEmail, setFieldEmail] = useState('douglas@mail.com');
-	const [fieldPassword, setFieldPassword] = useState('123456');
+	const [fieldEmail, setFieldEmail] = useState('');
+	const [fieldPassword, setFieldPassword] = useState('');
 	const history = useHistory();
 
 	function handleSubmit(e) {
