@@ -10,15 +10,15 @@ function Trash({ dataUser }) {
 		<>
 			<NavBar />
 			<div className='titleArea'>
-				<h3 className="titleTrash">Estes são os livros que você excluiu</h3>
+				<h3 className='titleTrash'>Estes são os livros que você excluiu</h3>
 			</div>
 			<div className='containerContent'>
 				<div className='box-content'>
 					{dataUser.books.length === 0 && (
 						<div className='msgEmpty'>
 							<h5>
-								Biblioteca vazia, clique no botão acima para começar a
-								criar sua bibilioteca pessoal!
+								Lixeira vazia, Quando você excluir um livro, é pra cá
+								que ele vem.
 							</h5>
 						</div>
 					)}

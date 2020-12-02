@@ -281,7 +281,15 @@
       "lastName": "Silva",
       "email": "natan1@mail.com",
       "password": "1234567",
-      "books": [],
+      "books": [
+        {
+          "title": "asdkjhaskdjfh",
+          "synopsis": "ksklsajdlfçasdfasdf",
+          "read": false,
+          "deleted": false,
+          "id": 0
+        }
+      ],
       "id": 3
     },
     {
@@ -300,21 +308,21 @@
       "books": [
         {
           "title": "O Capital",
-          "synopsis": "O Capital é um conjunto de livros de Karl Marx que constituem uma análise do capitalismo. Muitos consideram esta obra o marco do pensamento socialista marxista",
+          "synopsis": "O Capital é um conjunto de livros de Karl Marx que constituem uma análise do capitalismo. Muitos consideram esta obra o marco do pensamento socialista marxista.",
           "read": true,
           "deleted": false,
           "id": 0
         },
         {
-          "title": "Ideias Que Rimam Mais Que Palavras",
+          "title": "Ideias que Rimam Mais que Palavras",
           "synopsis": "“Ideias que rimam mais que palavras - Vol.1” é o primeiro livro de Rashid, rapper paulistano que cultiva desde a infância o gosto pela leitura e pelo universo literário. Como rimador, é referência de lírica e traz isso, agora, em novo formato, fazendo crônicas de suas músicas enquanto relembra momentos marcantes da carreira. Rashid narra partes de sua trajetória musical, indo dos dias mais precários até os mais expressivos, ao dar detalhes das composições e daquilo que o inspirou a fazer os versos que o tornaram consagrado.",
           "read": false,
           "deleted": false,
           "id": 1
         },
         {
-          "title": "Clean Code",
-          "synopsis": "Mesmo um código ruim pode funcionar. Mas se ele não for limpo, pode acabar com uma empresa de desenvolvimento. Perdem-se a cada ano horas incontáveis e recursos importantes devido a um código mal escrito. Mas não precisa ser assim.",
+          "title": "Na Minha Pele",
+          "synopsis": "Movido pelo desejo de viver num mundo em que a pluralidade cultural, racial, étnica e social seja vista como um valor positivo, e não uma ameaça, Lázaro Ramos divide com o leitor suas reflexões sobre temas como ações afirmativas, gênero, família, empoderamento, afetividade e discriminação. Ainda que não seja uma biografia, em Na minha pele Lázaro compartilha episódios íntimos de sua vida e também suas dúvidas, descobertas e conquistas. Ao rejeitar qualquer tipo de segregação ou radicalismos, Lázaro nos fala da importância do diálogo.",
           "read": false,
           "deleted": true,
           "id": 2
